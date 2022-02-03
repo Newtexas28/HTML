@@ -1,21 +1,28 @@
+<!--HTML-fila starter har-->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--Lager titel på nettsida-->
         <title>Del 1:</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/stylesheet.css">
     </head>
     <body>
+        <!--Lager overskrifter-->
         <h1> Del 1 Tilfeding tall: </h1>
         <h2> Klikk knappen under: </h2>
-        <div id = "random">
-            Her kjem det eit tilfeldig tall:  
+        <!--Leger in tekst for å forklare korleis få ut eit tilfeldig tall.-->
+        <div>
+            Klikk for å skrive ut eit tilfeldig tall:
+        </div>
+        <!--Deklarer ein div med id = "random" for å bli brukt i main.js-->
+        <div id = "random"> 
         </div>
         <button onclick = "klikk();">Klikk meg!</button>
-        <!--Henter inn koden frå mappa js og så fila main.js. Async defer kjører koden -->        
+        <!--Henter inn koden frå mappa js og så fila main.js. Async defer kjører koden så fort han er lata ned. URL: https://www.digitalocean.com/community/tutorials/html-defer-async -->        
         <script src="js/main.js" async defer></script>
     </body>
 </html>
