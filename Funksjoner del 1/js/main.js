@@ -8,9 +8,10 @@ function summer () {
 };
 */
 
-const input1 = document.getElementById(input1).innerHTML;
-const input2 = document.getElementById(input2).innerHTML;
+
+const input1 = 12;
+const input2 = 45;
 
 const sum = () => {
-    document.getElementById(sum).innerHTML = input1 * input2
+    document.getElementById('sum').innerHTML = input1 * input2;
 };
