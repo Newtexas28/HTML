@@ -2,13 +2,35 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <meta http-equiv="X-UACompatible" content="IE=edge">
+        <!--Set namn på nettsida-->
+        <title>Funksjon del 1:</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/stylesheet.css">
     </head>
-    <body>        
-        <script src="" async defer></script>
+    <body>
+        <!--lager overskrifter som forklarer programet-->
+        <h1>Funksjoner del 1:</h1>
+        <h2>Skriv inn 2 tall under:</h2>
+        <h3>Denne gangen fil eg bruke ein random funksjon for å legge saman dei to tallene</h3>
+        <!--Lager ein div med forklarende tekst over kva brukaren skal gjere-->
+        <div>
+            Klikk knapen her for å få ut svaret av dei to tala lakt saman.
+        </div>
+        <!--legger til ein id, for å seinare estate innhaldet i button onclick-->
+        <div id = "sum">
+            <button onclick = "sum();">Klikk meg for å få ut sumen!</button>
+        </div>
+        <p1>
+            Funksjoner er ein gjenbrukbar del av kode som putter saman ein spesefikk sekvans av  for å gjere ein spesefikk oppgåve.
+            Funksjoner inneheld argumenter som kan blir brukt inn i funksjonen.
+        </p1>
+        <p2>
+            Døme: const klikk = (input1, input2) => {
+                return input1 * input2;
+            };
+        </p2>
+        <script src="js/main.js" async defer></script>
     </body>
 </html>
