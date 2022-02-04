@@ -1,10 +1,16 @@
-const klikk = () => {
-        document.getElementById('random').innerHTML = Math.floor((Math.random() * 100));;
-    };
+//henter input frå brukaren frå nettsida
+/*
+const input1 = parseInt.document.getElementById(input1).value.innerHTML;
+const input2 = parseInt.document.getElementById(input2).value.innerHTML;
 
-const input1 = 12;
-const input2 = 45;
+function summer () {
+    return document.getElementById('sum').value = input1 * input2;
+};
+*/
+
+const input1 = document.getElementById(input1).innerHTML;
+const input2 = document.getElementById(input2).innerHTML;
 
 const sum = () => {
-    document.getElementById('sum').innerHTML = input1 * input2;
+    document.getElementById(sum).innerHTML = input1 * input2
 };
