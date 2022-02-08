@@ -6,8 +6,6 @@ const user_time = () => {
 */
 const given_time = 3729 
 
-console.log(given_time);
-
 //Making a function that calculates hours from det global constant "given_time".
 const hours = (given_time) => {
     return Math.trunc(given_time / 3600)
