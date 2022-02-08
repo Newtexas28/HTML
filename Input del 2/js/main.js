@@ -1,6 +1,7 @@
 //Start of main.js
 
-const vitser = { 
+//Seting up a dictionary
+const jokes = { 
     0: 'Hvorfor går alle svenskene med hendene i lomma? De vil ikke at noen skal se at alle fingrene ikke er like lange.',
     1: 'To blondiner var i skogen for å lete etter et juletre. Etter et par timer hadde de rukket å få frosne fingre og tær da den ene utbryter: Nå orker jeg ikke mer. Jeg tar det neste treet jeg ser, uansett om det er pyntet eller ikke.', 
     2: 'Ola: Pappa kan jeg få låne en hakke? Pappa: Hva skal du med den? Ola: Hakke peiling.', 
@@ -27,11 +28,17 @@ const vitser = {
     23: 'Kelneren deler ut bestikk ved bordet. Pappa: Prøver du å bestikke meg?', 
     24: 'Har du hørt om den ene sandhaugen som ble skuffet over den andre.',
     25: 'Hva er favorittfilmen til fuglene? Pip Pip Langstrømpe.'
+    };
+    
+// Making a random function to finde a number between 0 and 25
+const random = () => {
+    const value = jokes[Math.floor(Math.random() * Object.keys(jokes).length)];
+    return value;
 };
 
-const vits = () => {
-    Math.floor((Math.random() * 100));
+const output = () => {
+    document.getElementById('output').innerHTML = random()
 };
 
-vitser[vits()];
-console.log(vitser);
+//Leger til console.log(random()); her forå teste om programet fungerer
+console.log(random());
