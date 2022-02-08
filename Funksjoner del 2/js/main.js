@@ -1,4 +1,5 @@
 // Begining of main.js
+
 /*
 const user_time = () => {
     parseInt().document.getElementById('input_time').value.innerHTML

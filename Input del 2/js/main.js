@@ -30,15 +30,15 @@ const jokes = {
     25: 'Hva er favorittfilmen til fuglene? Pip Pip Langstrømpe.'
     };
     
-// Making a random function to find a number between 0 and 25
+//Making a random function to find a key (number) between 0 and 25 to look up a joke from the dictionary.
 const random = () => {
     const value = jokes[Math.floor(Math.random() * Object.keys(jokes).length)];
     return value;
 };
-
+//Making a function that sends the values from random to replace the <div></div> contents in index.html document.
 const output = () => {
     document.getElementById('output').innerHTML = random()
 };
 
-//Adding console.log(random()); to see if the code is working correctly.
+//Adding console.log(random()); to see, if the code is working correctly.
 console.log(random());
