@@ -31,9 +31,10 @@ const seconds = (given_time, hours, minutes) => {
 
 /* 
  * Taking user input from the HTML and declaring in the variabel the given_time.
+ * This vaiabel is use in the three functions: hours(), minutes() and seconds().
  * Using parseInt() to convert the string thet comes from the HTML website into numbers. 
  * Making a function with all the value from the three previous functions above
- * and putting their values in a string assigne to the constant time. 
+ * and putting their values in a string assigne to the constant "time". 
  */
 
 const total_time = () => {
