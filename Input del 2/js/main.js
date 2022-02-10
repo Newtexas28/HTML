@@ -1,6 +1,8 @@
 //Start of main.js
 
-//Setting up a dictionary
+/*
+ * Setting up a dictionary
+ */
 const jokes = { 
     0: 'Hvorfor går alle svenskene med hendene i lomma? De vil ikke at noen skal se at alle fingrene ikke er like lange.',
     1: 'To blondiner var i skogen for å lete etter et juletre. Etter et par timer hadde de rukket å få frosne fingre og tær da den ene utbryter: Nå orker jeg ikke mer. Jeg tar det neste treet jeg ser, uansett om det er pyntet eller ikke.', 
@@ -30,15 +32,25 @@ const jokes = {
     25: 'Hva er favorittfilmen til fuglene? Pip Pip Langstrømpe.'
     };
     
-//Making a random function to find a key (number) between 0 and 25 to look up a joke from the dictionary.
+/* 
+ * Making a random function to find a key (number) between,
+ * 0 and 25 to look up a joke from the dictionary.
+ */
+
 const random = () => {
     const value = jokes[Math.floor(Math.random() * Object.keys(jokes).length)];
     return value;
 };
-//Making a function that sends the values from random to replace the <div></div> contents in index.html document.
+/*
+ * Making a function that sends the values from random to replace the, 
+ * <div></div> contents in index.html document.
+ */
+
 const output = () => {
     document.getElementById('output').innerHTML = random()
 };
 
-//Adding console.log(random()); to see, if the code is working correctly.
+/* 
+ * Adding console.log(random()); to see, if the code is working correctly.
+ */
 console.log(random());
