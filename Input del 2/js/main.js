@@ -3,6 +3,7 @@
 /*
  * Setting up a dictionary
  */
+
 const jokes = { 
     0: 'Hvorfor går alle svenskene med hendene i lomma? De vil ikke at noen skal se at alle fingrene ikke er like lange.',
     1: 'To blondiner var i skogen for å lete etter et juletre. Etter et par timer hadde de rukket å få frosne fingre og tær da den ene utbryter: Nå orker jeg ikke mer. Jeg tar det neste treet jeg ser, uansett om det er pyntet eller ikke.', 
@@ -41,6 +42,7 @@ const random = () => {
     const value = jokes[Math.floor(Math.random() * Object.keys(jokes).length)];
     return value;
 };
+
 /*
  * Making a function that sends the values from random to replace the, 
  * <div></div> contents in index.html document.
@@ -53,4 +55,5 @@ const output = () => {
 /* 
  * Adding console.log(random()); to see, if the code is working correctly.
  */
+
 console.log(random());
