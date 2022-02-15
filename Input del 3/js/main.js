@@ -8,9 +8,11 @@
  */
 
 const plus = () => {
-    const input1 = parseInt(document.getElementById('number1').value);
-    const input2 = parseInt(document.getElementById('number2').value);
-    document.getElementById('resultat').innerHTML = input1 + input2; 
+    const input1 = parseInt(document.getElementById('input1').value);
+    const input2 = parseInt(document.getElementById('input2').value);
+    const plus = input1 + input2;
+    const p = plus.toString();
+    document.getElementById('resultat').innerHTML = p;
 };
 
 /*
@@ -19,9 +21,11 @@ const plus = () => {
  */
 
 const minus = () => {
-    const input1 = parseInt(document.getElementById('number1').value);
-    const input2 = parseInt(document.getElementById('number2').value);
-    document.getElementById('resultat').innerHTML = input1 -input2
+    const input1 = parseInt(document.getElementById('input1').value);
+    const input2 = parseInt(document.getElementById('input2').value);
+    const minus = input1 -input2;
+    const mi = minus.toString();
+    document.getElementById('resultat').innerHTML = mi;
 };
 
 /*
@@ -30,9 +34,11 @@ const minus = () => {
  */
 
 const multiplication = () => {
-    const input1 = parseInt(document.getElementById('number1').value);
-    const input2 = parseInt(document.getElementById('number2').value);
-    document.getElementById('resultat').innerHTML = input1 * input2;
+    const input1 = parseInt(document.getElementById('input1').value);
+    const input2 = parseInt(document.getElementById('input2').value);
+    const mulitplication = input1 * input2;
+    const mu = mulitplication.toString()
+    document.getElementById('resultat').innerHTML = mu;
 };
 
 /*
@@ -41,9 +47,11 @@ const multiplication = () => {
  */
 
 const division = () => {
-    const input1 = parseInt(document.getElementById('number1').value);
-    const input2 = parseInt(document.getElementById('number2').value);
-    document.getElementById('resultat').innerHTML = input1 / input2;
+    const input1 = parseInt(document.getElementById('input1').value);
+    const input2 = parseInt(document.getElementById('input2').value);
+    const division = input1 / input2;
+    const di = division;
+    document.getElementById('resultat').innerHTML = di;
 };
 
 /*
