@@ -3,13 +3,13 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     border: 2px solid black;
-    background-color: rgba(231, 22, 22, 0.849);
     max-width: 400px;
     grid-template-areas: 
         "tittel tittel"
         "bilete russetype"
         "bilete namn"
         "bilete adresse"
+        "bilete skulestad"
         "bilete telefon"
         "bilete sitat";
 }
@@ -26,7 +26,7 @@
 }
 
 .bilete img {
-    width: 150px;
+    width: 200px;
 } 
 
 .russetype {
@@ -50,4 +50,11 @@
 
 .sitat {
     grid-area: sitat;
+}
+.skulestad {
+    grid-area: skulestad;
+}
+
+body {
+    background-color: beige;
 }

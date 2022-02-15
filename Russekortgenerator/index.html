@@ -13,53 +13,58 @@
     <body>
         <h1>Russekortgenerator oppgåve</h1>
         <h2>Dette nettsida skal skrive ut eit russekort</h2>
-        <h3>Her er inputt felt for informasjon som skal være på kortet</h3>
-        <div class = "russekort">
-            <div class = "bilete"><img src="IMage/Clone tropper Asoka.jfif" alt=""></div>
-            <div class = "tittel">DombåsRuss 2023</div>
-            <div class = "russetype">Raudruss</div>
-            <div class = "namn">Jon Håkon</div>
-            <div class = "telefon"> 523 47 234</div>
-            <div class = "adresse">Baklia i Ingenmannsland</div>
-            <div class = "sitat">Hello World!</div>
-        </div>
+        <h3>Nedanfor er inputfelt for informasjon som skal være på kortet</h3>
+
         <div>
-            <h5>Skriv inn Russe namn/namn:</h5>
+            <h5>Skriv inn Russenamn/namn:</h5>
             <input type = "text" id = "Russenamn" name = "personleg_namn_på_russekortet">
-            <h5>Skiv inn Russeadresse:</h5>
-            <input type = "text" id = "Russeadresse" name ="Russeadresse">
+            <h5>Skriv inn Russeadresse:</h5>
+            <input type = "text" id = "Russeadresse" name = "Russeadresse">
             <h5>Skriv inn  Russetelefonnummer:<h5>
-            <input type = "number" id = "Russetelefonnummer" name ="Russetelefonnummer_mitt">
+            <input type = "number" id = "Russetelefon" name ="Russetelefonnummer_mitt">
         </div>
-        <form>
-            <p>Velg farge på russekortet</p>
+        <!--making a labal to exspain to teh use what to due.-->
+        <!--Using option value here so i get a value back that i cane use on the card.-->
+        <label for = "Namn_på_skule_stad">Velg ein Skulestad: </label><br>
+        <select id = "Namn_på_skule_stad" name = "Namn_på_skule_stad">
+            <option value = "Dombås VG2">Dombås VG2</option>
+            <option value = "Dombås VG3">Dombås VG3</option>
+            <option value = "Otta VG3">Otta VG3</option>
+        </select>
+        <!--Making radio buttons to the user can pick between the 4 colors-->
+        <!--Using labels to dispaly what color teh user are choosing-->
+            <h5>Velg ein farge på russekortet</h5>
             <div>
-                <input type = "radio" id = "farge_valg_1" name = "farge" value = "raud">
+                <input type = "radio" name = "farge" value = "radio" onclick="red();">
                 <label for = "farge_valg_1">Raud</label>
 
-                <input type = "radio" id ="farge_valg_2" name = farge value = "blå">
-                <label for = "farge_valg_2">Blå</label>
+                <input type = "radio" name = "farge" value = "radio" onclick="blue();">
+                <label for = "farge_valg_2"></label>Blå</label>
 
-                <input type = "radio" id ="farge_valg_3" name = farge value = "grønn">
+                <input type = "radio" name = farge value = "radio" onclick="green();">
                 <label for = "farge_valg_3">Grønn</label>
 
-                <input type = "radio" id ="farge_valg_4" name = farge value = "svart">
-                <label for = "farge_valg_4">Svart</label>
+                <input type = "radio" id ="farge_valg_4" name = "farge" value = "radio" onclick="gold();">
+                <label for = "farge_valg_4">Gull</label>
             </div>
-            <div>
-                <button type ="submit">Submit</button>
-            </div>
-        </form>
-        <label for = "Namn_på_skule_stad">Velg ein Skulestad:</label><br>
-        <select name = "Namn_på_skule_stad" id = "Namn_på_skule_stad">
-            <option value = "Dombås_VG2">Dombås VG2</option>
-            <option value = "Dombås_VG3">Dombås VG3</option>
-            <option value = "Otta_VG3">Otta VG3</option>
-        </select>
+        <!--Making a class so the user can import their own picture-->
         <div class = "bilete">
             <input type = "file" id="valgt_bilete" name = "avatar" accept = "image/png, image/jpeg">
         </div>
-        <button id = "random_quote">Her kjem det ein tilfeldig russespøk</button>       
+        <!--Setting up the class russekort that will be the base of the card-->
+        <div class = "russekort" id = "russekort">
+            <div class = "bilete"><img src="Image/Clone tropper Asoka.jfif" alt=""></div>
+            <div class = "tittel">DombåsRuss 2023</div>
+            <div class = "russetype">Raudruss</div>
+            <div id = "namn">Jon Håkon</div>
+            <div id = "telefon">Tlf: 523 47 234</div>
+            <div id = "adresse">Adr: Balalika i Ingenmannsland</div>
+            <div id = "skulestad">Skulested: Dombås VGS 2</div>
+            <div id = "sitat">Hello World!</div>
+        </div>
+        <!--Making a button too update the card and putt in a random joke insted of Hello World-->
+        <button onclick = "output()">Klikk meg for å oppdatere kortet</button>
+
         <script src="js/main.js" async defer></script>
     </body>
 </html>
