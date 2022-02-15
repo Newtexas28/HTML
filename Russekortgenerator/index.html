@@ -3,18 +3,63 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Russekortgenerator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/stylesheet.css">
-    </head>
+        <link href='https://fonts.googleapis.com/css?family=Alatsi' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet'>
+    </head> 
     <body>
-        <h1>
-            Russekortgenerator oppgåve
-        </h1>
-        <h2>
-            Dette nettsida skal skrive ut eit russekort
-        </h2>       
+        <h1>Russekortgenerator oppgåve</h1>
+        <h2>Dette nettsida skal skrive ut eit russekort</h2>
+        <h3>Her er inputt felt for informasjon som skal være på kortet</h3>
+        <div class = "russekort">
+            <div class = "bilete"><img src="IMage/Clone tropper Asoka.jfif" alt=""></div>
+            <div class = "tittel">DombåsRuss 2023</div>
+            <div class = "russetype">Raudruss</div>
+            <div class = "namn">Jon Håkon</div>
+            <div class = "telefon"> 523 47 234</div>
+            <div class = "adresse">Baklia i Ingenmannsland</div>
+            <div class = "sitat">Hello World!</div>
+        </div>
+        <div>
+            <h5>Skriv inn Russe namn/namn:</h5>
+            <input type = "text" id = "Russenamn" name = "personleg_namn_på_russekortet">
+            <h5>Skiv inn Russeadresse:</h5>
+            <input type = "text" id = "Russeadresse" name ="Russeadresse">
+            <h5>Skriv inn  Russetelefonnummer:<h5>
+            <input type = "number" id = "Russetelefonnummer" name ="Russetelefonnummer_mitt">
+        </div>
+        <form>
+            <p>Velg farge på russekortet</p>
+            <div>
+                <input type = "radio" id = "farge_valg_1" name = "farge" value = "raud">
+                <label for = "farge_valg_1">Raud</label>
+
+                <input type = "radio" id ="farge_valg_2" name = farge value = "blå">
+                <label for = "farge_valg_2">Blå</label>
+
+                <input type = "radio" id ="farge_valg_3" name = farge value = "grønn">
+                <label for = "farge_valg_3">Grønn</label>
+
+                <input type = "radio" id ="farge_valg_4" name = farge value = "svart">
+                <label for = "farge_valg_4">Svart</label>
+            </div>
+            <div>
+                <button type ="submit">Submit</button>
+            </div>
+        </form>
+        <label for = "Namn_på_skule_stad">Velg ein Skulestad:</label><br>
+        <select name = "Namn_på_skule_stad" id = "Namn_på_skule_stad">
+            <option value = "Dombås_VG2">Dombås VG2</option>
+            <option value = "Dombås_VG3">Dombås VG3</option>
+            <option value = "Otta_VG3">Otta VG3</option>
+        </select>
+        <div class = "bilete">
+            <input type = "file" id="valgt_bilete" name = "avatar" accept = "image/png, image/jpeg">
+        </div>
+        <button id = "random_quote">Her kjem det ein tilfeldig russespøk</button>       
         <script src="js/main.js" async defer></script>
     </body>
 </html>

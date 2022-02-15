@@ -1,0 +1,53 @@
+.russekort {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    border: 2px solid black;
+    background-color: rgba(231, 22, 22, 0.849);
+    max-width: 400px;
+    grid-template-areas: 
+        "tittel tittel"
+        "bilete russetype"
+        "bilete namn"
+        "bilete adresse"
+        "bilete telefon"
+        "bilete sitat";
+}
+
+.tittel {
+    grid-area: tittel;
+    font-family: 'Alatsi';
+    font-size: 22px;
+}
+
+.bilete {
+    grid-area: bilete;
+    border: 1px solid red;
+}
+
+.bilete img {
+    width: 150px;
+} 
+
+.russetype {
+    grid-area: russetype;
+    font-family: 'Damion';
+    font-size: 34px;
+}
+
+.namn {
+    grid-area: namn;
+    font-size: 20px;
+}
+
+.adresse {
+    grid-area: adresse;
+}
+
+.telefon {
+    grid-area: telefon;
+}
+
+.sitat {
+    grid-area: sitat;
+}
