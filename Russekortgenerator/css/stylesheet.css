@@ -1,6 +1,6 @@
 .russekort {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 2fr;
     grid-template-rows: auto;
     border: 2px solid black;
     max-width: 400px;
@@ -23,10 +23,12 @@
 .bilete {
     grid-area: bilete;
     border: 1px solid red;
+    
 }
 
 .bilete img {
-    width: 200px;
+    max-width: 170px;
+    max-height: 150px;
 } 
 
 .russetype {

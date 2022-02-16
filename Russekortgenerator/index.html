@@ -48,12 +48,13 @@
                 <label for = "farge_valg_4">Gull</label>
             </div>
         <!--Making a class so the user can import their own picture-->
-        <div class = "bilete">
-            <input type = "file" id="valgt_bilete" name = "avatar" accept = "image/png, image/jpeg">
-        </div>
+        <div>
+                <input type="file" accept="image/*" id="choose-file" name="choose-file" onchange="byttbilete();"/>
+                <label for="choose-file">Choose File</label>
+              </div>
         <!--Setting up the class russekort that will be the base of the card-->
         <div class = "russekort" id = "russekort">
-            <div class = "bilete"><img src="Image/Clone tropper Asoka.jfif" alt=""></div>
+            <div class= "bilete" id = "file"><img src="Image/Clone tropper Asoka.jfif" alt=""></div>
             <div class = "tittel">DombåsRuss 2023</div>
             <div class = "russetype">Raudruss</div>
             <div id = "namn">Jon Håkon</div>
