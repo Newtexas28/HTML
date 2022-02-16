@@ -49,14 +49,13 @@
             </div>
         <!--Making a class so the user can import their own picture-->
         <div>
-                <input type="file" accept="image/*" id="choose-file" name="choose-file" onchange="byttbilete();"/>
-                <label for="choose-file"></label>
-              </div>
+            <input type = "file" accept="image/*" id = "choose-file" name = "choose-file" onchange = "byttbilete();"/>
+        </div>
         <!--Setting up the class russekort that will be the base of the card-->
         <div class = "russekort" id = "russekort">
             <div class= "bilete" id = "file"><img src="Image/Clone tropper Asoka.jfif" alt=""></div>
             <div class = "tittel">DombåsRuss 2023</div>
-            <div class = "russetype">Raudruss</div>
+            <div class = "russetype">RaudRuss</div>
             <div id = "namn">Jon Håkon</div>
             <div id = "telefon">Tlf: 523 47 234</div>
             <div id = "adresse">Adr: Balalika i Ingenmannsland</div>
@@ -65,7 +64,10 @@
         </div>
         <!--Making a button too update the card and putt in a random joke insted of Hello World-->
         <button onclick = "output()">Klikk meg for å oppdatere kortet</button>
-
+        <h1>Forklaring: </h1>
+        <p>Denne appen gjer brukar i stand til å lage eit digitalt personleg russekort som brukaren kan utforme sjølv.</p>
+        <p>Appen tek brukar input som namn, adresse, telefonummer. Brukaren kan også velge skulestad og farge på kortet, samt legge til eit personleg bilete og ein tilfeldig spøk.</p>
+        <p>Appen starter med predefinerte verdiar for input, som døme på korleis brukaren kan lage russekortet sitt.</p>
         <script src="js/main.js" async defer></script>
     </body>
 </html>
