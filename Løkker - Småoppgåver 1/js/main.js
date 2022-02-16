@@ -3,21 +3,24 @@
  */
 
 /*
- * Making a function so I can decide if I want to console.log() the for-loop or not,'
- * and being able to send the values back to the website
- * Making a for loop to console.log() the numbers from  1 to 100.
- */
-
-/*
  * Using let instead of const when declearing the global variable numbers and index.
  * Using const will not end an error message to the user but only the first,
  * function will work. Only way to check this is in "utvikler verktøy".
- * Ther you will be able to see where the error is organating from.
- * In this case giving new values to numbers and index coudel resolv in an error
+ * There you will be able to see where the error is organating from.
+ * In this case giving new values to numbers and index in the functions,
+ * will resolv in an error, because the value will not
+ * be reset to blank array and zero when running a second function.
  */
 
 let numbers = [];
 let index = 0;
+
+/*
+ * Making a function so I can decide if I want to console.log() the for-loop or not,'
+ * and being able to send the values back to the website
+ * Making a for loop to console.log() the numbers from  1 to 100,
+ * and putting them in to the array numbers
+ */
 
 const to_hundred = () => {
     numbers=[];
@@ -31,7 +34,9 @@ const to_hundred = () => {
 /*
  * Making a function so I can decide if I want to console.log() the for-loop or not,'
  * and being able to send the values back to the website
- * Making a for loop to console.log() every other the numbers from 1 to 100.
+ * Making a for loop to console.log() every other the numbers from 1 to 100,
+ * and putting them in to the array numbers. Making an index for the array so:
+ * number 1 is zero in the array 3 is the first in the array and so on.
  */
 
 const every_other = () => {

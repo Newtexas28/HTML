@@ -4,7 +4,7 @@
 
 /*
  * Setting up a dictonary and using numbers as the keys to be able get a,
- * random joke inn a new array 
+ * random joke in a new array 
  */ 
 const jokes = { 
     0: 'Hvorfor går alle svenskene med hendene i lomma? De vil ikke at noen skal se at alle fingrene ikke er like lange.',
@@ -36,11 +36,12 @@ const jokes = {
     };
     
 /* 
- * This is a helper function
+ * random() is a helper function.
  * Making a random function to find a key (number) between,
  * 0 and 25 to look up a joke from the dictionary.
- * Then using the length of that to make a new array and returning that array,
- * so it can be used in the function output
+ * The length of  the list of keys is used as the maximum integer number,
+ * when drawing a key. The drawn key is used to look up in the dictionary,
+ * to return a text string.
  */
 
 const random = () => {
@@ -49,17 +50,18 @@ const random = () => {
 };
 
 /*
- * Making four new hellper functions bellow: red(), blue(), green() and gold().
- * Creating a new local variabel inside the function and asignne it to:
+ * Making four new helper functions below: red(), blue(), green() and gold().
+ * Creating a new local variabel inside the function and assign it to:
  * document.getElementById("russekort");. 
- * Then giving each function it own backgroundColor by giving the local variabel,
- * element a new style and backgroundColor equell to teh function name.  
+ * Then give each function its own backgroundColor by giving the local variabel,
+ * element a new style and backgroundColor.  
  */ 
 
 const red =() => {
     const element = document.getElementById("russekort");
     element.style.backgroundColor = "rgba(231, 22, 22, 0.849)";
 };
+
 const blue = () => {
     const element = document.getElementById("russekort");
     element.style.backgroundColor = "rgb(70, 70, 248)";
@@ -76,35 +78,42 @@ const gold = () => {
 };
 
 /*
- * 
+ * Define a variable to select file (chooseFile)
+ * Define a variable to predefined a select file (imgPreview) 
  */
 
 const chooseFile = document.getElementById("choose-file");
 const imgPreview = document.getElementById("file");
 
-  function byttbilete() {
-    const files = chooseFile.files[0];
-    if (files) {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(files);
-      fileReader.addEventListener("load", function () {
+const byttbilete = () => {
+  const files = chooseFile.files[0];
+  if (files) 
+  {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(files);
+    fileReader.addEventListener("load",
+      function () 
+      {
         imgPreview.style.display = "block";
         imgPreview.innerHTML = '<img src="' + this.result + '" />';
-      });    
-    }
-  }
+      }
+    );    
+  };
+};
 
 /*
  * Declaring the output function.
  * Getting input from from website
+ * Using parseInt() to convert a string to Int.
  * Using .value to retrieve the value of input elements from the website and 
  * .toString to convert numbers into a string.
  * Making strings to send back to the website.
- * Sending the diffrent local vaiabels back to the website and 
- * repalcing the originale information with the strings in the code bellow
+ * Sending the different local variables back to the website and 
+ * replacing the original information with the strings in the code below.
+ * The random function is used to select a joke/quote
  */
 const output = () => {
-    const namn = document.getElementById('Russenamn')
+    const namn = document.getElementById('Russenamn');
     const adresse = document.getElementById('Russeadresse');
     const skule = document.getElementById('Namn_på_skule_stad');
     const telefon = parseInt(document.getElementById('Russetelefon').value);
