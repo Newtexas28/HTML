@@ -13,17 +13,22 @@
             Input del 3:
         </h1>
         <p>
-            På denne nettsiden skal koden legge saman to brukar input tal som,
-            antenn er å legge saman, trekke frå, gange eller delle tala saman.
+            På denne nettsiden skal koden utføre ein valgt aritmetisk operasjon med to input tal.
+            Operasjonane er: addisjon, subtraksjon, multiplikasjon og divisjon.
         </p>
         <!--Making a input for the first number-->
-        <input id = "input1", type = "number", value = "">
-        <input id = "input2", type = "number", value = "">
         <div>
-            <button onclick = "plus();">+</button>
-            <button onclick = "minus();">-</button>
-            <button onclick = "multiplication();">*</button>
-            <button onclick = "division();">/</button>
+            <label>Input 1:</label>
+            <input id = "input1", type = "number", value = ""> <br>
+            <label>Input 2:</label>
+            <input id = "input2", type = "number", value = ""> <br>
+            <div>
+                <label></label> <br>
+                <button onclick = "plus();">+</button>
+                <button onclick = "minus();">-</button>
+                <button onclick = "multiplication();">*</button>
+                <button onclick = "division();">/</button>
+            </div>
         </div>
         <p>
             Svaret:
@@ -32,9 +37,11 @@
             Her kjem resultatet!
         </div>
         <h1>Forklaring: </h1>
-        <p>Appen over skal fungere som ein enkel kalkulator å gjere rekne operasjoane plus, minus, gange og dele.</p>
-        <p>Det eg gjorde var å hente inn input verdiar å deklarere dei til variablar. Så lager eg ein ny variabel med rekne operasjonen, før eg sender verdi tilbake. </p>
-        <p>Eg lagde også ein button til kvar av rekneoperasjonane som kjøyre den spesefikke rekne operasjonen og sender svaret tilbake til websida</p>
+        <p>Appen over skal fungere som ein enkel kalkulator.</p>
+        <p>Det eg gjorde var å hente inn input verdiar og tilordne dei til variabler. 
+            Så lager eg ein ny variabel med rekne operasjonen, før eg sender verdi tilbake. </p>
+        <p>Eg lagde også ein button til kvar av rekneoperasjonane for
+            å køyre den spesifikke rekneoperasjonen og sender svaret tilbake til websida</p>
         <script src="js/main.js" async defer></script>
     </body>
 </html>

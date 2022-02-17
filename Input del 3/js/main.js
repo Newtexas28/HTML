@@ -1,12 +1,14 @@
 /*
- * Beging of main.js
- */
-    
+ * Begining of main.js
+ * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
+ */ 
+
 /*
- * Making a function plus to add the two input values together,
- * add returning the value.
- * using parsInt to convert the incoming input from the website thats a string
- * and converting it into numbers. Then converting the numbers into string again
+ * Making the functions plus(), minus(), multiplication() and division(),
+ * for the arithmetic operation between the two input values.
+ * The functions return the result of the of operation.
+ * I use parseInt() to convert the incoming input string to a number.
+ * Then the result is converted into a string again for the output field.
  */
 
 const plus = () => {
@@ -17,13 +19,6 @@ const plus = () => {
     document.getElementById('resultat').innerHTML = p;
 };
 
-/*
- * Making a function minus to subtract the two input values from each other,
- * in this case subtracting input2 from input1 and returing the value.
- * using parsInt to convert the incoming input from the website thats a string
- * and converting it into numbers. Then converting the numbers into string again
- */
-
 const minus = () => {
     const input1 = parseInt(document.getElementById('input1').value);
     const input2 = parseInt(document.getElementById('input2').value);
@@ -32,13 +27,6 @@ const minus = () => {
     document.getElementById('resultat').innerHTML = mi;
 };
 
-/*
- * Making a function multiplication to multipli input1 and input2
- * the returning the value.
- * using parsInt to convert the incoming input from the website thats a string
- * and converting it into numbers. Then converting the numbers into string again  
- */
-
 const multiplication = () => {
     const input1 = parseInt(document.getElementById('input1').value);
     const input2 = parseInt(document.getElementById('input2').value);
@@ -46,13 +34,6 @@ const multiplication = () => {
     const mu = mulitplication.toString()
     document.getElementById('resultat').innerHTML = mu;
 };
-
-/*
- * Making a function to divide the numbers from input1 with the numbers from input2,
- * then returning the value.
- * using parsInt to convert the incoming input from the website thats a string
- * and converting it into numbers. Then converting the numbers into string again
- */
 
 const division = () => {
     const input1 = parseInt(document.getElementById('input1').value);

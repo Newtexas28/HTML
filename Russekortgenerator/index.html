@@ -14,42 +14,43 @@
         <h1>Russekortgenerator oppgåve</h1>
         <h2>Dette nettsida skal skrive ut eit russekort</h2>
         <h3>Nedanfor er inputfelt for informasjon som skal være på kortet</h3>
-
-        <div>
-            <h5>Skriv inn Russenamn/namn:</h5>
-            <input type = "text" id = "Russenamn" name = "personleg_namn_på_russekortet">
-            <h5>Skriv inn Russeadresse:</h5>
-            <input type = "text" id = "Russeadresse" name = "Russeadresse">
-            <h5>Skriv inn  Russetelefonnummer:<h5>
-            <input type = "number" id = "Russetelefon" name ="Russetelefonnummer_mitt">
-        </div>
-        <!--making a labal to exspain to teh use what to due.-->
-        <!--Using option value here so i get a value back that i cane use on the card.-->
-        <label for = "Namn_på_skule_stad">Velg ein Skulestad: </label><br>
-        <select id = "Namn_på_skule_stad" name = "Namn_på_skule_stad">
-            <option value = "Dombås VG2">Dombås VG2</option>
-            <option value = "Dombås VG3">Dombås VG3</option>
-            <option value = "Otta VG3">Otta VG3</option>
-        </select>
-        <!--Making radio buttons to the user can pick between the 4 colors-->
-        <!--Using labels to dispaly what color teh user are choosing-->
-            <h5>Velg ein farge på russekortet</h5>
+        <div class = "option">
             <div>
-                <input type = "radio" name = "farge" value = "radio" onclick="red();">
-                <label for = "farge_valg_1">Raud</label>
-
-                <input type = "radio" name = "farge" value = "radio" onclick="blue();">
-                <label for = "farge_valg_2"></label>Blå</label>
-
-                <input type = "radio" name = farge value = "radio" onclick="green();">
-                <label for = "farge_valg_3">Grønn</label>
-
-                <input type = "radio" id ="farge_valg_4" name = "farge" value = "radio" onclick="gold();">
-                <label for = "farge_valg_4">Gull</label>
+                <label>Skriv inn Russenamn/namn: </label> <br>
+                <input type = "text" id = "Russenamn" name = "personleg_namn_på_russekortet"> <br>
+                <label>Skriv inn Russeadresse: </label> <br>
+                <input type = "text" id = "Russeadresse" name = "Russeadresse"> <br>
+                <label>Skriv inn  Russetelefonnummer: </label> <br>
+                <input type = "number" id = "Russetelefon" name ="Russetelefonnummer_mitt"> <br>
             </div>
-        <!--Making a class so the user can import their own picture-->
-        <div>
-            <input type = "file" accept="image/*" id = "choose-file" name = "choose-file" onchange = "byttbilete();"/>
+            <!--making a labal to exspain to teh use what to due.-->
+            <!--Using option value here so i get a value back that i cane use on the card.-->
+            <label for = "Namn_på_skule_stad">Velg ein Skulestad: </label><br>
+            <select id = "Namn_på_skule_stad" name = "Namn_på_skule_stad">
+                <option value = "Dombås VG2">Dombås VG2</option>
+                <option value = "Dombås VG3">Dombås VG3</option>
+                <option value = "Otta VG3">Otta VG3</option>
+            </select>
+            <!--Making radio buttons to the user can pick between the 4 colors-->
+            <!--Using labels to dispaly what color teh user are choosing-->
+                <h5>Velg ein farge på russekortet</h5>
+                <div>
+                    <input type = "radio" name = "farge" value = "radio" onclick="red();">
+                    <label for = "farge_valg_1">Raud</label>
+
+                    <input type = "radio" name = "farge" value = "radio" onclick="blue();">
+                    <label for = "farge_valg_2"></label>Blå</label>
+
+                    <input type = "radio" name = farge value = "radio" onclick="green();">
+                    <label for = "farge_valg_3">Grønn</label>
+
+                    <input type = "radio" id ="farge_valg_4" name = "farge" value = "radio" onclick="gold();">
+                    <label for = "farge_valg_4">Gull</label>
+                </div>
+            <!--Making a class so the user can import their own picture-->
+            <div>
+                <input type = "file" accept="image/*" id = "choose-file" name = "choose-file" onchange = "byttbilete();"/>
+            </div>
         </div>
         <!--Setting up the class russekort that will be the base of the card-->
         <div class = "russekort" id = "russekort">
