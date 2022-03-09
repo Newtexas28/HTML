@@ -1,45 +1,43 @@
-
 /*
- * Begining of main.js
+ * Beginning of main.js
  */
 
 /*
- * 
+ * Make a function with the parameter ...numbers. Then using the built in function
+ * reduce() to sum the values of the input array.
+ * This function was an example from the website: 
+ * https://www.codegrepper.com/code-examples/javascript/array+sum+using+spread+in+js
  */
 
-const initialValue = 0;
-
-
-
-const average = array.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
-    initialValue)/array.length
-
-/*
- * Making a function sum with the input values x, y, z, n.
- * Then returning the vaule of the first 4 value elmements in the array
- * and dividing it on the length of the array
- */ 
-
-
-const sum = (x, y, z, n, array) => {
-    return (x + y + z + n) / array.length;
+const sum = (...numbers) => {
+	return numbers.reduce((accumulator, current) => {
+		return accumulator += current;
+	});
 };
 
 /*
- * Making a console.log() to check if the anwser is correct.
- */
-
-console.log(average);
-console.log(sum(...array));
-
-/*
- * making a function to retrun the value of average, 
+ * Make a function to return the value in result1 and result2, 
  * when cliking the button on the website. 
+ * Taking a textstring input from the textarea from the website and 
+ * returning the value.
+ * the text string is then split up into individual words and then
+ * convert into numbers using the object Number.
+ * 
+ * Then apply the function sum() to the array to sum all elements 
+ * and also calculate the average 
+ * 
  */
-const output = () => {
-    let new_array = parseInt(document.getElementById('input1').value);
-    const array = new_array.split(" ");
 
-    document.getElementById('average').innerHTML = toString(sum);
+const output = () => {
+  const input_string = document.getElementById('Textarea').value;
+  const text_array = input_string.split(" ");
+  const array_with_numbers = text_array.map(Number);
+
+  const sumer = sum(...array_with_numbers);
+
+  const result1 = "Sum: " + sumer;
+  const result2 = "Gjennomsnitt: " + sumer/array_with_numbers.length
+
+  document.getElementById('sum').innerHTML = result1;
+  document.getElementById('average').innerHTML = result2; 
 };
