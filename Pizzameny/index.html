@@ -7,16 +7,35 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Pizzameny</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/styleshet.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
+        <h1>Pizzameny</h1>
+        <h2>Menyen er under</h2>
+
+        <div>
+            <label for = "Topping">Velg Topping: </label><br>
+            <select id = "Topping" name = "Topping">
+                <option value = "Simpel">Ost, tomatsaus</option>
+                <option value = "Biff">Ost, tomatsaus, marinert biff i strimmler, bacon of løk</option>
+                <option value = "Kylling">Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong</option>
+            </select>
+        <div>
+            <h5>Skriv inn i felta under om der er topping du vil ha på pizza-en</h5>
+            <input id = "add1"> <br>
+            <input id = "add2"> <br>
+        </div>
+        <h5>Skriv inn felta under om det er topping du ikkje vil ha på pizza-en</h5>
+        <input id = "remove1"> <br>
+        <input id = "remove2"> <br>
+        <h4>Klikk knappen for å sjå dei valge ingidiensane og pizza-en</h4>
+        <div id = "topping"></div>
+        <button onclick = "output();">Sjå pizza-en</button>
+        <h1>Forklaring:</h1>
+        <p>Denne appen skal lage ein pizza etter brukarens val</p>
+        <script src="js/main.js" async defer></script>
     </body>
 </html>
