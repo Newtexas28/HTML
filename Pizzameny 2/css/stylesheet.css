@@ -1,0 +1,50 @@
+.pizzameny {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: auto;
+    border: 2px solid black;
+    max-width: 700px;
+    grid-template-areas: 
+        "tittle tittle"
+        "bilete bilete"
+        "velgpizza velgpizza"
+        "ekstra ekstra"
+        "fjern fjern";
+}
+
+.tittle {
+    grid-area: tittle;
+    font-family: 'Libre Baskerville';
+    font-size: 50px;
+    color: rgb(7, 7, 7);
+    position: absolute;
+}
+.bilete {
+    grid-area: bilete;
+
+}
+
+.bilete img {
+    max-width: 100;
+    max-height: 200;
+}
+
+.velgpizza {
+    grid-area: velgpizza;
+    font-family: 'Libre Baskerville';
+}
+
+.ekstra {
+    grid-area: ekstra;
+}
+
+.fjern {
+    grid-area: fjern;
+}
+
+/*
+ * Giving the body the color beige
+ */
+body {
+    background-color: beige;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pizzameny</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styleshet.css">
+        <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="pizzameny">
+        <div class = "tittle">Pizzameny</div>
+        <div class ="bilete"></div><img src="Images/Kebab piza.jpg" alt="">
+
+            <div class = "velgpizza">
+            <label for = "velgpizza">Velg Pizza: </label><br>
+            <select id = "velgpizza" name = "velgpizza">
+                <option value = "Ost Tomatsaus">Ost, tomatsaus</option>
+                <option value = "Ost Tomatsaus Biff Bacon Løk">Ost, tomatsaus, marinert biff i strimler, bacon og løk</option>
+                <option value = "Ost Tomatsaus Kylling Løk Mais Sjampinjong">Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong</option>
+            </select>
+                <div>
+        <h5>Skriv inn i felta under om der er topping du vil ha på pizza-en</h5>
+        <div class = "ekstra">
+            <label for = "Ekstra">Velg ekstra Topping: </label><br>
+            <select id = "Ekstra" name = "Ekstra">
+                <option value = ""></option>
+                <option value = "Ananas">Ananas</option>    
+                <option value = "Skinke">Skinke</option>
+                <option value = "Pepperoni">Pepperoni</option>
+                <option value = "Nachoschips">Nachoschips</option>
+                <option value = "Paprika">Paprika</option>
+                <option value = "Jalapeños">Jalapeños</option>
+                <option value = "Kjøttdeig">Kjøttdeig</option>
+            </select>
+        </div>
+        <h5>Skriv inn felta under om det er topping du ikkje vil ha på pizza-en</h5>
+        <div class = "fjern">
+            <label for = "Fjern">Velg å fjerne Topping: </label><br>    
+            <select id = "Fjern" name = "Fjern">
+                <option value = ""></option>
+                <option value = "Biff">Biff</option>
+                <option value = "Bacon">Bacon</option>
+                <option value = "Løk">Løk</option>
+                <option value = "Kylling">Kylling</option>
+                <option value = "Mais">Mais</option>
+                <option value = "Sjampinjong">Sjampinjong</option>
+            </select>
+        </div>
+        <h4>Klikk knappen for å sjå dei valge ingidiensane og pizza-en</h4>
+        <div id = "result"></div>
+        <div id = "forloop">Returner ingrediensar med ein for løkke</div>
+        <div id = "forofloop">Returner ingrediensar med ein for of løkke</div>
+        
+    </div>
+        <button onclick = "output();">Sjå pizza-en</button>
+        <h1>Forklaring:</h1>
+        <p>Denne appen skal lage ein pizza etter brukarens val. Brukaren kan fjerne eller legge til ingrediensar brukaren vil ha på pizza ein sin</p>
+        <script src="js/main.js" async defer></script>
+    </body>
+</html>
