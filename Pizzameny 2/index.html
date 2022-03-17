@@ -7,61 +7,84 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Pizzameny</title>
+        <title>Pizzameny 2</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styleshet.css">
+        <link rel="stylesheet" href="css/stylesheet.css">
         <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
     </head>
     <body>
         <div class="pizzameny">
-        <div class = "tittle">Pizzameny</div>
-        <div class ="bilete"></div><img src="Images/Kebab piza.jpg" alt="">
-
-            <div class = "velgpizza">
-            <label for = "velgpizza">Velg Pizza: </label><br>
-            <select id = "velgpizza" name = "velgpizza">
-                <option value = "Ost Tomatsaus">Ost, tomatsaus</option>
-                <option value = "Ost Tomatsaus Biff Bacon Løk">Ost, tomatsaus, marinert biff i strimler, bacon og løk</option>
-                <option value = "Ost Tomatsaus Kylling Løk Mais Sjampinjong">Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong</option>
-            </select>
-                <div>
-        <h5>Skriv inn i felta under om der er topping du vil ha på pizza-en</h5>
-        <div class = "ekstra">
-            <label for = "Ekstra">Velg ekstra Topping: </label><br>
-            <select id = "Ekstra" name = "Ekstra">
-                <option value = ""></option>
-                <option value = "Ananas">Ananas</option>    
-                <option value = "Skinke">Skinke</option>
-                <option value = "Pepperoni">Pepperoni</option>
-                <option value = "Nachoschips">Nachoschips</option>
-                <option value = "Paprika">Paprika</option>
-                <option value = "Jalapeños">Jalapeños</option>
-                <option value = "Kjøttdeig">Kjøttdeig</option>
-            </select>
+            <div class = "tittle">Pizzameny</div>
+            <div class ="bilete">
+                <img src="Images/Kebab piza.jpg" alt="">
+            </div>
+                <div class="velgmeny">
+                    <label for = "velgmeny">Velg Pizza, drikke og antall drikke: </label> <br>
+                    <select id = "velgpizza" name = "velgpizza">
+                        <option value = "01"> 01 DEN ENKLE (Ost, tomatsaus)</option>
+                        <option value = "02">02 BIFFEN (Ost, tomatsaus, marinert biff i strimler, bacon og løk)</option>
+                        <option value = "03">03 KOKKENS KYLLING (Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong)</option>
+                    </select>
+                    <select id = "velgdrikke" name = "velgdrikke">
+                        <option value = ""></option>
+                        <option value = "01">Cola</option>
+                        <option value = "02">Fanta</option>
+                        <option value = "03">Peppsi</option>
+                        <option value = "04">Monster</option>
+                    </select>
+                    <select id = "antalldrikke" name = "antalldrikke">
+                        <option value = ""></option>
+                        <option value = "1">1 drikke</option>
+                        <option value = "2">2 drikke</option>
+                        <option value = "3">3 drikke</option>
+                        <option value = "4">4 drikke</option>
+                        <option value = "5">5 drikke</option>
+                        <option value = "6">6 drikke</option>
+                        <option value = "7">7 drikke</option>
+                        <option value = "8">8 drikke</option>
+                        <option value = "9">9 drikke</option>
+                        <option value = "10">10 drikke</option>
+                        <option value = "11">11 drikke</option>
+                        <option value = "12">12 drikke</option>
+                    </select>
+                </div>
+            
+            <div>
+            <h5>Skriv inn i felta under om der er topping du vil ha på pizza-en</h5>
+            <div class = "ekstra">
+                <label for = "Ekstra">Velg ekstra Topping: </label><br>
+                <select id = "Ekstra" name = "Ekstra">
+                    <option value = ""></option>
+                    <option value = "Ananas">Ananas</option>    
+                    <option value = "Skinke">Skinke</option>
+                    <option value = "Pepperoni">Pepperoni</option>
+                    <option value = "Nachoschips">Nachoschips</option>
+                    <option value = "Paprika">Paprika</option>
+                    <option value = "Jalapeños">Jalapeños</option>
+                    <option value = "Kjøttdeig">Kjøttdeig</option>
+                </select>
+            </div>
+            <h5>Skriv inn felta under om det er topping du ikkje vil ha på pizza-en</h5>
+            <div class = "fjern">
+                <label for = "Fjern">Velg å fjerne Topping: </label><br>    
+                <select id = "Fjern" name = "Fjern">
+                    <option value = ""></option>
+                    <option value = "Biff">Biff</option>
+                    <option value = "Bacon">Bacon</option>
+                    <option value = "Løk">Løk</option>
+                    <option value = "Kylling">Kylling</option>
+                    <option value = "Mais">Mais</option>
+                    <option value = "Sjampinjong">Sjampinjong</option>
+                </select>
+            </div>
+            <h4>Klikk knappen for å sjå kvitteringa: </h4>
+            <div id = "result"></div>
+    
+            <button onclick = "output();">Sjå pizza-en</button>
+            <h1>Forklaring:</h1>
+            <p></p>
         </div>
-        <h5>Skriv inn felta under om det er topping du ikkje vil ha på pizza-en</h5>
-        <div class = "fjern">
-            <label for = "Fjern">Velg å fjerne Topping: </label><br>    
-            <select id = "Fjern" name = "Fjern">
-                <option value = ""></option>
-                <option value = "Biff">Biff</option>
-                <option value = "Bacon">Bacon</option>
-                <option value = "Løk">Løk</option>
-                <option value = "Kylling">Kylling</option>
-                <option value = "Mais">Mais</option>
-                <option value = "Sjampinjong">Sjampinjong</option>
-            </select>
-        </div>
-        <h4>Klikk knappen for å sjå dei valge ingidiensane og pizza-en</h4>
-        <div id = "result"></div>
-        <div id = "forloop">Returner ingrediensar med ein for løkke</div>
-        <div id = "forofloop">Returner ingrediensar med ein for of løkke</div>
-        
-    </div>
-        <button onclick = "output();">Sjå pizza-en</button>
-        <h1>Forklaring:</h1>
-        <p>Denne appen skal lage ein pizza etter brukarens val. Brukaren kan fjerne eller legge til ingrediensar brukaren vil ha på pizza ein sin</p>
         <script src="js/main.js" async defer></script>
     </body>
 </html>

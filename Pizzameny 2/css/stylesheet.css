@@ -3,11 +3,11 @@
     grid-template-columns: 2fr 2fr;
     grid-template-rows: auto;
     border: 2px solid black;
-    max-width: 700px;
+    max-width: 800px;
     grid-template-areas: 
         "tittle tittle"
         "bilete bilete"
-        "velgpizza velgpizza"
+        "velgmeny velgmeny"
         "ekstra ekstra"
         "fjern fjern";
 }
@@ -17,11 +17,12 @@
     font-family: 'Libre Baskerville';
     font-size: 50px;
     color: rgb(7, 7, 7);
-    position: absolute;
 }
 .bilete {
     grid-area: bilete;
-
+    /*position: absolute;
+    */
+     
 }
 
 .bilete img {
@@ -29,8 +30,8 @@
     max-height: 200;
 }
 
-.velgpizza {
-    grid-area: velgpizza;
+.velgmeny {
+    grid-area: velgmeny;
     font-family: 'Libre Baskerville';
 }
 

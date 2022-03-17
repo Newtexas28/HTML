@@ -5,6 +5,43 @@
  */  
 
 /*
+ * Making three different dictionary to store the ingredients, pizza price and drink price.
+ */
+
+const pizza_name = {
+    "01": "DEN ENKLE",
+    "02": "BIFFEN",
+    "03": "KOKKENS KYLLING"
+};
+
+const pizza_ingredients = {
+    "01": "Ost Tomatsaus",
+    "02": "Ost Tomatsaus Biff Bacon Løk",
+    "03": "Ost Tomatsaus Kylling Løk Mais Sjampinjong"
+};
+
+
+const pizza_price = {
+    "01": 135,
+    "02": 229,
+    "03": 208
+};
+
+const drink_name = {
+    "01": "Cola",
+    "02": "Fanta",
+    "03": "Peppsi",
+    "04": "Monster"
+};
+
+const drink_price = {
+    "01": 35,
+    "02": 35,
+    "03": 35,
+    "04": 35
+};
+
+/*
  * Make a function called output()
  * Methods found at: https://www.w3schools.com/js/js_array_methods.asp
  * .split(" ") split a text string into multiple strings and put them into an array.
@@ -21,12 +58,18 @@
 const output = () => 
     {
         const chosen_pizza = document.getElementById('velgpizza').value;
+        const chosen_drink = document.getElementById('velgdrikke').value;
+        const number_of_drinks = document.getElementById('antalldrikke').value;
         const ekstra = document.getElementById('Ekstra').value;
         const fjern = document.getElementById('Fjern').value;
-        let textforloop = "<br>" + "Ingrediensene er: " + "<br>";
-        let textforofloop = "<br>" + "Ingrediensene er: " + "<br>";
+        //let textforloop = "<br>" + "Ingrediensene er: " + "<br>";
+        //let textforofloop = "<br>" + "Ingrediensene er: " + "<br>";
 
-        const pizza_array = chosen_pizza.split(" ");
+        /*
+         *
+         */
+
+        const pizza_array = pizza_ingredients[chosen_pizza].split(" ");
 
         /*
          * Search for item to remove using splice to remove that item.
@@ -48,9 +91,19 @@ const output = () =>
         {
             pizza_array.push(ekstra)
         };    
-    /*
+    
+        const pizza = "Pizza: " + pizza_name[chosen_pizza] + "<br>" +
+        "Topping: " + pizza_array.sort().join(" + ") + "<br>" +
+        "Drikke: " + drink_name[chosen_drink] + " " + number_of_drinks + "stk.";
+
+        //document.getElementById("forloop").innerHTML = textforloop;
+        //document.getElementById("forofloop").innerHTML = textforofloop;
+        document.getElementById('result').innerHTML = pizza;
+    };
+
+/*
      * Using 2 different loops to create a text string of all the ingredients 
-     */
+     
         for (let i = 0; i < pizza_array.length; i++) 
         {
             textforloop += pizza_array[i] + "<br>";
@@ -60,13 +113,6 @@ const output = () =>
         {
             textforofloop += x + "<br>";
         };
-    /*
-     * Returing the strings back to the website
+    
+        Returing the strings back to the website
      */
-        const pizza = "Ingrediensene er: " + pizza_array.sort().join(" + ");
-
-        document.getElementById("forloop").innerHTML = textforloop;
-        document.getElementById("forofloop").innerHTML = textforofloop;
-        document.getElementById('result').innerHTML = pizza;
-    };
-
