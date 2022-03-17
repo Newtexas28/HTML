@@ -34,7 +34,7 @@ const output = () =>
          * is equal to input from fjern and if so than use .splice
          */
 
-        for (let i = 0; i<pizza_array.length; i++) 
+        for (let i = 0; i < pizza_array.length; i++) 
         {
             x = pizza_array[i]
 
