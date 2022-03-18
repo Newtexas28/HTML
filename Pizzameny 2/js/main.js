@@ -5,7 +5,9 @@
  */  
 
 /*
- * Making three different dictionary to store the ingredients, pizza price and drink price.
+ * Making five different dictionary to store the name of the pizza, ingredients,
+ * the of price the pizza, name of the drink, price of the drink.
+ * Using dicionary to make my own index and compare it to value from thev website
  */
 
 const pizza_name = {
@@ -28,6 +30,7 @@ const pizza_price = {
 };
 
 const drink_name = {
+    "00": "",
     "01": "Cola",
     "02": "Fanta",
     "03": "Peppsi",
@@ -35,10 +38,11 @@ const drink_name = {
 };
 
 const drink_price = {
-    "01": 35,
-    "02": 35,
-    "03": 35,
-    "04": 35
+    "00": 0,
+    "01": 25,
+    "02": 25,
+    "03": 25,
+    "04": 30
 };
 
 /*
@@ -53,7 +57,7 @@ const drink_price = {
  * and join all the textstring all into one textstring.  
  * Collecting value from the website, that using .split() to convert the input
  * from a string to ann array
- */ 
+ */
 
 const output = () => 
     {
@@ -62,11 +66,10 @@ const output = () =>
         const number_of_drinks = document.getElementById('antalldrikke').value;
         const ekstra = document.getElementById('Ekstra').value;
         const fjern = document.getElementById('Fjern').value;
-        //let textforloop = "<br>" + "Ingrediensene er: " + "<br>";
-        //let textforofloop = "<br>" + "Ingrediensene er: " + "<br>";
 
         /*
-         *
+         * Finding the ingredents from teh dictionary and 
+         * splitting the incoming string info ann array 
          */
 
         const pizza_array = pizza_ingredients[chosen_pizza].split(" ");
@@ -90,29 +93,15 @@ const output = () =>
         if (ekstra != "") 
         {
             pizza_array.push(ekstra)
-        };    
-    
-        const pizza = "Pizza: " + pizza_name[chosen_pizza] + "<br>" +
-        "Topping: " + pizza_array.sort().join(" + ") + "<br>" +
-        "Drikke: " + drink_name[chosen_drink] + " " + number_of_drinks + "stk.";
+        };
 
-        //document.getElementById("forloop").innerHTML = textforloop;
-        //document.getElementById("forofloop").innerHTML = textforofloop;
+        const totale_price = pizza_price[chosen_pizza] + (drink_price[chosen_drink] * number_of_drinks);
+    
+        const pizza = `Pizza: ${pizza_name[chosen_pizza]} <br>
+        Topping: ${pizza_array.sort().join(" + ")} <br>
+        Drikke:  ${drink_name[chosen_drink]}  ${number_of_drinks} stk. <br>
+        Price:  ${totale_price}kr`;
+
+        
         document.getElementById('result').innerHTML = pizza;
     };
-
-/*
-     * Using 2 different loops to create a text string of all the ingredients 
-     
-        for (let i = 0; i < pizza_array.length; i++) 
-        {
-            textforloop += pizza_array[i] + "<br>";
-        };
-    
-        for (let x of pizza_array) 
-        {
-            textforofloop += x + "<br>";
-        };
-    
-        Returing the strings back to the website
-     */

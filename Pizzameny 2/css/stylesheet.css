@@ -3,13 +3,15 @@
     grid-template-columns: 2fr 2fr;
     grid-template-rows: auto;
     border: 2px solid black;
-    max-width: 800px;
+    max-width: 1000px;
     grid-template-areas: 
         "tittle tittle"
         "bilete bilete"
         "velgmeny velgmeny"
         "ekstra ekstra"
-        "fjern fjern";
+        "fjern fjern"
+        "result result"
+        "forklaring forklaring";
 }
 
 .tittle {
@@ -18,11 +20,9 @@
     font-size: 50px;
     color: rgb(7, 7, 7);
 }
+
 .bilete {
     grid-area: bilete;
-    /*position: absolute;
-    */
-     
 }
 
 .bilete img {
@@ -32,15 +32,27 @@
 
 .velgmeny {
     grid-area: velgmeny;
-    font-family: 'Libre Baskerville';
+    font-family: 'Libre Baskerville'; 
 }
 
 .ekstra {
     grid-area: ekstra;
+    font-family: 'Libre Baskerville';
 }
 
 .fjern {
     grid-area: fjern;
+    font-family: 'Libre Baskerville';
+}
+
+.result {
+    grid-area: result;
+    font-family: 'Libre Bakerville';
+}
+
+.forklaring {
+    grid-area: forklaring;
+    font-family: 'Libre Baskerville';
 }
 
 /*
