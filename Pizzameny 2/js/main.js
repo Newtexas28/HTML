@@ -7,7 +7,10 @@
 /*
  * Making five different dictionary to store the name of the pizza, ingredients,
  * the of price the pizza, name of the drink, price of the drink.
- * Using dicionary to make my own index and compare it to value from thev website
+ * Get the key from the website for which pizza and drink to select.
+ * Use the key for the pizza to look up other attributes for pizza such as:
+ * name, ingredients and price.
+ * Do the same for drinks.
  */
 
 const pizza_name = {
@@ -30,7 +33,7 @@ const pizza_price = {
 };
 
 const drink_name = {
-    "00": "",
+    "00": "0",
     "01": "Cola",
     "02": "Fanta",
     "03": "Peppsi",
@@ -64,43 +67,52 @@ const output = () =>
         const chosen_pizza = document.getElementById('velgpizza').value;
         const chosen_drink = document.getElementById('velgdrikke').value;
         const number_of_drinks = document.getElementById('antalldrikke').value;
-        const ekstra = document.getElementById('Ekstra').value;
-        const fjern = document.getElementById('Fjern').value;
+        const extra = document.getElementById('Ekstra').value;
+        const remove = document.getElementById('Fjern').value;
 
         /*
-         * Finding the ingredents from teh dictionary and 
-         * splitting the incoming string info ann array 
+         * Find the ingredients from the dictionary and split the incoming string info,
+         * into an array of the individual strings with ingredients.  
          */
 
         const pizza_array = pizza_ingredients[chosen_pizza].split(" ");
 
         /*
-         * Search for item to remove using splice to remove that item.
-         * Using if statement to check if index to pizza_array,
-         * is equal to input from fjern and if so than use .splice
+         * Search for item to remove and use splice to remove that item.
+         * Use if statement in the for loop to check if the string in pizza_array
+         * is equal to the input string "remove" and use .splice() to remove 
+         * the string from the pizza array.
          */
 
         for (let i = 0; i < pizza_array.length; i++) 
         {
             x = pizza_array[i]
 
-            if (x === fjern) 
+            if (x === remove) 
             {
                pizza_array.splice(i, 1)
             };
         };
 
-        if (ekstra != "") 
+        if (extra != "") 
         {
-            pizza_array.push(ekstra)
+            pizza_array.push(extra)
         };
 
-        const totale_price = pizza_price[chosen_pizza] + (drink_price[chosen_drink] * number_of_drinks);
-    
+        /*
+         * Add the price for the pizza and the drink.
+         */
+
+        const total_price = pizza_price[chosen_pizza] + (drink_price[chosen_drink] * number_of_drinks);
+        
+        /*
+         * Putting all the info info one string and sending it back to the website.
+         */
+
         const pizza = `Pizza: ${pizza_name[chosen_pizza]} <br>
-        Topping: ${pizza_array.sort().join(" + ")} <br>
+        Topping: ${pizza_array.sort().join(", ")} <br>
         Drikke:  ${drink_name[chosen_drink]}  ${number_of_drinks} stk. <br>
-        Price:  ${totale_price}kr`;
+        Pris:  ${total_price}kr`;
 
         
         document.getElementById('result').innerHTML = pizza;

@@ -1,28 +1,7 @@
-.pizzameny {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-    border: 2px solid black;
-    max-width: 1000px;
-    grid-template-areas: 
-        "tittle tittle"
-        "bilete bilete"
-        "velgmeny velgmeny"
-        "ekstra ekstra"
-        "fjern fjern"
-        "result result"
-        "forklaring forklaring";
-}
-
-.tittle {
-    grid-area: tittle;
+.title {
     font-family: 'Libre Baskerville';
     font-size: 50px;
     color: rgb(7, 7, 7);
-}
-
-.bilete {
-    grid-area: bilete;
 }
 
 .bilete img {
@@ -31,27 +10,22 @@
 }
 
 .velgmeny {
-    grid-area: velgmeny;
     font-family: 'Libre Baskerville'; 
 }
 
 .ekstra {
-    grid-area: ekstra;
     font-family: 'Libre Baskerville';
 }
 
 .fjern {
-    grid-area: fjern;
     font-family: 'Libre Baskerville';
 }
 
 .result {
-    grid-area: result;
     font-family: 'Libre Bakerville';
 }
 
 .forklaring {
-    grid-area: forklaring;
     font-family: 'Libre Baskerville';
 }
 
@@ -60,4 +34,18 @@
  */
 body {
     background-color: beige;
+}
+
+.margin {
+    margin-bottom: 25px;
+}
+
+#antallDrikke {
+    position: absolute;
+    right: 31.5%;
+}
+
+#drikkeValg {
+    position: absolute;
+    right: 46.5%;
 }

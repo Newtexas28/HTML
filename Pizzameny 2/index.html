@@ -15,26 +15,28 @@
     </head>
     <body>
         <div class="pizzameny">
-            <div class = "tittle">Pizzameny</div>
+            <div class = "title">Pizzameny</div>
             <div class ="bilete">
                 <img src="Images/Kebab piza.jpg" alt="">
             </div>
             <div class="velgmeny">
-                <label for = "velgmeny">Velg Pizza, drikke og antall drikke: </label> <br>
-                <select id = "velgpizza" name = "velgpizza" onchange="output();">
+                <label for = "velgmeny">Velg Pizza</label>
+                <label for = "velgmeny" id = "drikkeValg">Drikke</label>
+                <label for = "velgmeny" id = "antallDrikke">Antall drikke</label> <br>
+                <select class = "margin" id = "velgpizza" name = "velgpizza" onchange="output();">
                     <option value = "00"></option>
                     <option value = "01"> 01 DEN ENKLE (Ost, tomatsaus) Pris: 135kr</option>
                     <option value = "02">02 BIFFEN (Ost, tomatsaus, marinert biff i strimler, bacon og løk) Pris: 229kr</option>
                     <option value = "03">03 KOKKENS KYLLING (Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong) Pris: 208kr</option>
                 </select>
-                <select id = "velgdrikke" name = "velgdrikke" onchange="output();">
+                <select class = "margin" id = "velgdrikke" name = "velgdrikke" onchange="output();">
                     <option value = "00"></option>
                     <option value = "01">Cola Pris: 25kr</option>
                     <option value = "02">Fanta Pris: 25kr</option>
                     <option value = "03">Peppsi Pris: 25kr</option>
                     <option value = "04">Monster Pris: 30kr</option>
                 </select>
-                <select id = "antalldrikke" name = "antalldrikke" onchange="output();">
+                <select class = "margin" id = "antalldrikke" name = "antalldrikke" onchange="output();">
                     <option value = ""></option>
                     <option value = "1">1 drikke</option>
                     <option value = "2">2 drikke</option>
@@ -52,7 +54,7 @@
             </div>
             <div class = "ekstra">
                 <label for = "Ekstra">Velg ekstra Topping: </label><br>
-                <select id = "Ekstra" name = "Ekstra" onchange="output();">
+                <select class = "margin" id = "Ekstra" name = "Ekstra" onchange="output();">
                     <option value = ""></option>
                     <option value = "Ananas">Ananas</option>    
                     <option value = "Skinke">Skinke</option>
@@ -78,12 +80,14 @@
             </div>
             
             <div class = "result">
-                <h3>Kvitering: </h3>
+                <h3>Kvittering: </h3>
                 <div id="result"></div>
             </div> <br>
             <div class = "forklaring">
                 <h1>Forklaring:</h1>
-                <p>Denne appen skal fungere som ein bestillings app der ein kan velg og bestile ein pizza med drikke.</p>
+                <p>Denne appen skal fungere som ein bestillingsapp for pizza der ein kan velge og bestille ein pizza med drikke. 
+                    Bruker listefunksjoner og dictionary i JavaScript koden.
+                </p>
             </div>
         </div>
         <script src="js/main.js" async defer></script>
