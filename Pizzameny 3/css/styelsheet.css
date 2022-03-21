@@ -1,0 +1,51 @@
+.title {
+    font-family: 'Libre Baskerville';
+    font-size: 50px;
+    color: rgb(7, 7, 7);
+}
+
+.bilete img {
+    max-width: 100;
+    max-height: 200;
+}
+
+.velgmeny {
+    font-family: 'Libre Baskerville'; 
+}
+
+.ekstra {
+    font-family: 'Libre Baskerville';
+}
+
+.fjern {
+    font-family: 'Libre Baskerville';
+}
+
+.result {
+    font-family: 'Libre Bakerville';
+}
+
+.forklaring {
+    font-family: 'Libre Baskerville';
+}
+
+/*
+ * Giving the body the color beige
+ */
+body {
+    background-color: beige;
+}
+
+.margin {
+    margin-bottom: 25px;
+}
+
+#antallDrikke {
+    position: absolute;
+    right: 31.5%;
+}
+
+#drikkeValg {
+    position: absolute;
+    right: 46.5%;
+}
