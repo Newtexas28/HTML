@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,26 +11,31 @@
     </head>
     <body>
         <div class="pizzameny">
-            <div class = "title">Pizzameny</div>
+            <div id = "title" class = "title">Pizzameny</div>
             <div class ="bilete">
                 <img src="Images/Kebab piza.jpg" alt="">
             </div>
             <div class="velgmeny">
                 <label for = "velgmeny">Velg Pizza</label>
+                <label for ="velgmeny" id = "storleik">Storleik</label>
                 <label for = "velgmeny" id = "drikkeValg">Drikke</label>
                 <label for = "velgmeny" id = "antallDrikke">Antall drikke</label> <br>
-                <select class = "margin" id = "velgpizza" name = "velgpizza" onchange="output();">
+                <select class = "margin" id = "velgpizza" name = "velgpizza" onchange = "output();">
                     <option value = "00"></option>
-                    <option value = "01">01 DEN ENKLE (Ost, tomatsaus) Pris: 135kr</option>
-                    <option value = "02">02 BIFFEN (Ost, tomatsaus, marinert biff i strimler, bacon og løk) Pris: 229kr</option>
-                    <option value = "03">03 KOKKENS KYLLING (Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong) Pris: 208kr</option>
-                    <option value = "04">04 FALAFELEN (Ost, tomatsaus, falafel, rødløk, gul paprika, oliven og sjampinjong) Pris: 199kr</option>
-                    <option value = "05">05 KRUTTSTERK (Ost, tomatsaus med chili, sterk og marinert kylling, rødløk og jalapeno) Pris: 204kr</option>
-                    <option value = "06">06 SQUASHEN (Ost, tomatsaus, hvitløk, squash, rød paprika, rødløk, oliven, sukkererter og fetaost) Pris: 179kr</option>
-                    <option value = "07">07 TOSPANNET (Ost, tomatsaus, pepperoni, skinke og ananas) Pris: 176kr</option>
-                    <option value = "08">08 DOBBELDEKKER (Ost, tomatsaus, skinke, kjøttdeig og oregano) Pris: 199kr</option>
-                    <option value = "09">09 KEBABEN (Ost, tomatsaus med chili, kebabkjøtt, mais, rødløk og jalapeño) Pris: 218kr</option>
-                    <option value = "10">10 DRENGEN (Ost, tomatsaus, skinke og bacon) Pris: 199kr </option>
+                    <option value = "01">01 DEN ENKLE (Ost, tomatsaus)</option>
+                    <option value = "02">02 BIFFEN (Ost, tomatsaus, marinert biff i strimler, bacon og løk)</option>
+                    <option value = "03">03 KOKKENS KYLLING (Ost, tomatsaus, marinert kylling, løk, mais og sjampinjong)</option>
+                    <option value = "04">04 FALAFELEN (Ost, tomatsaus, falafel, rødløk, gul paprika, oliven og sjampinjong)</option>
+                    <option value = "05">05 KRUTTSTERK (Ost, tomatsaus med chili, sterk og marinert kylling, rødløk og jalapeno)</option>
+                    <option value = "06">06 SQUASHEN (Ost, tomatsaus, hvitløk, squash, rød paprika, rødløk, oliven, sukkererter og fetaost)</option>
+                    <option value = "07">07 TOSPANNET (Ost, tomatsaus, pepperoni, skinke og ananas)</option>
+                    <option value = "08">08 DOBBELDEKKER (Ost, tomatsaus, skinke, kjøttdeig og oregano)</option>
+                    <option value = "09">09 KEBABEN (Ost, tomatsaus med chili, kebabkjøtt, mais, rødløk og jalapeño)</option>
+                    <option value = "10">10 DRENGEN (Ost, tomatsaus, skinke og bacon)</option>
+                </select>
+                <select class = "margin" id = "velgstorleik" name = "velgstorleik" onchange="output();">
+                    <option value = "stor">Stor Pizza 40cm</option>
+                    <option value = "liten">Liten Pizza 30cm</option>
                 </select>
                 <select class = "margin" id = "velgdrikke" name = "velgdrikke" onchange="output();">
                     <option value = "00"></option>
@@ -73,23 +74,36 @@
                 </select>
             </div>
             
-            <div class = "fjern">
+            <div class = "fjern" onchange="output();">
                 <label for = "Fjern">Velg å fjerne Topping: </label><br>    
-                <select id = "Fjern" name = "Fjern" onchange="output();">
+                <select id = "Fjern" name = "Fjern">
                     <option value = ""></option>
                     <option value = "Biff">Biff</option>
                     <option value = "Bacon">Bacon</option>
-                    <option value = "Løk">Løk</option>
                     <option value = "Kylling">Kylling</option>
+                    <option value = "Kjøttdeig">Kjøttdeig</option>
+                    <option value = "Pepperoni">Pepperoni</option>
+                    <option value = "Kebabkjøtt">Kebabkjøtt</option>
+                    <option value = "Løk">Løk</option>
                     <option value = "Mais">Mais</option>
                     <option value = "Sjampinjong">Sjampinjong</option>
+                    <option value = "Rødløk">Rødløk</option>
+                    <option value = "Oliven">Oliven</option>
+                    <option value = "Gulpaprika">Gul Paprika</option>
+                    <option value = "Rødpaprika">Rød Paprika</option>
+                    <option value = "Jalapeños">Jalapeños</option>
+                    <option value = "Kvitløk">Kvitløk</option>
+                    <option value = "Squash">Squash</option>
+                    <option value = "Sukkererter">Sukkererter</option>
+                    <option value = "Ananas">Ananas</option>
+                    <option value = "Fetaost">Fetaost</option>
+                    <option value = "Oregano">Oregano</option>
                 </select>
             </div>
-            
             <div class = "result">
-                <h3>Kvittering: </h3>
-                <div id="result"></div>
+                <h3>Kvittering: </h3>    
             </div> <br>
+            
             <div class = "forklaring">
                 <h1>Forklaring:</h1>
                 <p>Denne appen skal fungere som ein bestillingsapp for pizza der ein kan velge og bestille ein pizza med drikke. 
