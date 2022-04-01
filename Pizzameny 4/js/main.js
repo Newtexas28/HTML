@@ -5,122 +5,6 @@
  */  
 
 /*
- * Making the class Pizza
- * Validate the input data in the constructor of the class 
- * Finding information about classes using the website:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#species
- * 
- */ 
-
-class Pizza {
-    constructor(name, size, price, ingredients) {
-        if(name in Object.values(pizza_names)) {
-            this._name = name;    
-        }
-        else {
-            console.log(`Specified name: ${name} is not defined.`)
-        }
-        
-        if (size === "Big" || size === "Small") {
-            this._size = size;
-        }
-        else {
-            console.log(`Specified size: ${size} is not defined.`)
-        }
-
-        if (isNaN(price)) {
-           console.log(`${price} is not a number`);
-        } 
-        else{
-            this._price = price;
-        }
-        
-        this._ingredients = ingredients;
-    }
-
-    get name() {
-        return this._name;
-    }
-
-    get size() {
-        return this._size;
-    }
-
-    get price() {
-        return this._price;
-    }
-
-    get ingredients() {
-        return this._ingredients;
-    }
-
-};
-
-class Drink {
-    constructor(name, price) {
-        if(name in Object.values(drink_names)) {
-            this._name = name;    
-        }
-        else {
-            console.log(`Specified name: ${name} is not defined.`)
-        }
-
-        if (isNaN(price)) {
-            console.log(`${price} is not a number`);
-        } 
-        else {
-            this._price = price;
-        }
-    }
-    get name() {
-        return this._name;
-    }
-
-    get price() {
-        return this._price;
-    }
-};
-
-class Menu {
-    constructor() {
-        let pizza_list = [];
-        for (const key in pizza_names) {
-            const size = "Big";
-            const name = pizza_names[key];
-            const price_large = pizza_price_large[key];
-            const ingredients = pizza_ingredients[key];
-            const pizza = Pizza(name, size, price_large, ingredients);
-            pizza_list.push(pizza);
-            
-            size = "Small"; 
-            const price_small = pizza_price_small[key];
-            pizza = Pizza(name, size, price_small, ingredients);
-            pizza_list.push(pizza);
-        };
-
-        let drink_list = [];
-        for (const key in drink_names) {
-            const name = drink_names[key];
-            const price = drink_price[key];
-            const drink = Drink(name, price);
-            drink_list.push(drink);
-        };
-        this._pizza_list = pizza_list;
-        this._drink_list = drink_list;
-
-        /*
-        for (const key in object) {
-            if (Object.hasOwnProperty.call(object, key)) {
-                const element = object[key];
-                
-            }
-        }*/
-    } 
-};
-
-const pizza = new Menu(pizza_names[chosen_pizza], pizza_ingredients[chosen_pizza], ) 
-
-/*
  * Making five different dictionary to store the name of the pizza, ingredients,
  * the of price the pizza, name of the drink, price of the drink.
  * Get the key from the website for which pizza and drink to select.
@@ -199,6 +83,159 @@ const drink_price = {
 };
 
 /*
+ * Making the class Pizza
+ * Validate the input data in the constructor of the class 
+ * Finding information about classes using the website:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#species
+ * 
+ */ 
+
+class Pizza {
+    constructor(name, size, price, ingredients) 
+    {
+        if(name in Object.values(pizza_names)) 
+        {
+            this._name = name;
+        }
+        else 
+        {
+            console.log(`Specified name: ${name} is not defined.`)
+        }
+        
+        if (size === "Big" || size === "Small") 
+        {
+            this._size = size;
+        }
+        else 
+        {
+            console.log(`Specified size: ${size} is not defined.`)
+        }
+
+        if (isNaN(price)) 
+        {
+           console.log(`${price} is not a number`);
+        } 
+        else 
+        {
+            this._price = price;
+        }
+        
+        this._ingredients = ingredients;
+    }
+
+    get name() 
+    {
+        return this._name;
+    }
+
+    get size() 
+    {
+        return this._size;
+    }
+
+    get price() 
+    {
+        return this._price;
+    }
+
+    get ingredients() 
+    {
+        return this._ingredients;
+    }
+};
+
+class Drink {
+    constructor(name, price) {
+        if(name in Object.values(drink_names)) 
+        {
+            this._name = name;    
+        }
+        else 
+        {
+            console.log(`Specified name: ${name} is not defined.`)
+        }
+
+        if (isNaN(price)) 
+        {
+            console.log(`${price} is not a number`);
+        } 
+        else 
+        {
+            this._price = price;
+        }
+    }
+    get name() 
+    {
+        return this._name;
+    }
+
+    get price() 
+    {
+        return this._price;
+    }
+};
+
+class Menu {
+    constructor() {
+        const pizza_list = [];
+        for (const key in pizza_names) 
+        {
+            let size = "Big";
+            const name = pizza_names[key];
+            const price_large = pizza_price_large[key];
+            const ingredients = pizza_ingredients[key];
+            let pizza = new Pizza(name, size, price_large, ingredients);
+            pizza_list.push(pizza);
+            
+            size = "Small"; 
+            const price_small = pizza_price_small[key];
+            pizza = new Pizza(name, size, price_small, ingredients);
+            pizza_list.push(pizza);
+        };
+
+        const drink_list = [];
+        for (const key in drink_names) 
+        {
+            const name = drink_names[key];
+            const price = drink_price[key];
+            const drink = new Drink(name, price);
+            drink_list.push(drink);
+        };
+
+        this._pizza_list = pizza_list;
+        this._drink_list = drink_list;
+    }
+
+    pizza() 
+    {    
+        for (const key in this.pizza_list) 
+        {
+            if (Object.hasOwnProperty.call(this.pizza_list, key)) 
+            {
+                const element = this.pizza_list[key];
+                return element;
+            }
+        }
+    }
+    drink() 
+    {
+        for (const key in this.drink_list) 
+        {
+            if (Object.hasOwnProperty.call(this.drink_list, key)) 
+            {
+                const element = this.drink_list[key]
+                return element;         
+            }   
+        }
+    }
+};
+
+let menu = new Menu()
+console.log(menu.pizza());
+console.log(menu.drink());
+
+
+/*
  * Make a function called output()
  * Methods found at: https://www.w3schools.com/js/js_array_methods.asp
  * .split(" ") split a text string into multiple strings and put them into an array.
@@ -259,7 +296,8 @@ const output = () =>
          * Putting all the info info one string and sending it back to the website.
          */
         
-        const pizza_output = `Pizza: ${pizza_names[chosen_pizza]} <br>
+        const pizza_output = `
+        Pizza: ${pizza_names[chosen_pizza]} <br>
         Topping: ${pizza_array.sort().join(", ")} <br>
         Drikke:  ${drink_names[chosen_drink]}  ${number_of_drinks} stk. <br>
         Pris uten mva:  ${total_price}kr <br>
