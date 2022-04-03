@@ -234,10 +234,24 @@ class Menu {
             drink.write();    
         }
     }
+    getarray()
+    {
+        const menu_array = [];
+        for (const pizza of this._pizza_list) {
+            const pizza_text = `${pizza.name}   ${pizza.size}   ${pizza.price}`;    
+            menu_array.push(pizza_text);
+        }
+        for (const drink of this._drink_list) {
+            const drink_text = `${drink.name}  ${drink.price}`;
+            menu_array.push(drink_text);
+        }
+        return menu_array;
+    } 
 };
 
 let menu = new Menu
 menu.write();
+console.log(menu.getarray());
 
 
 /*
