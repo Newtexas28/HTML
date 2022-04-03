@@ -91,17 +91,21 @@ const drink_price = {
  */ 
 
 class Pizza {
-    constructor(name, size, price, ingredients) 
+    constructor (name, size, price, ingredients) 
     {
-        if(name in Object.values(pizza_names)) 
-        {
-            this._name = name;
-        }
-        else 
-        {
-            console.log(`Specified name: ${name} is not defined.`)
+        this._name = "none"; 
+        for (const n in pizza_names) {
+            if (name === pizza_names[n]) 
+            {
+                this._name = name;
+            }
         }
         
+        if (this._name === "none") 
+        {
+            console.log(`This pizza ${name} does not exist!`)
+        }
+                
         if (size === "Big" || size === "Small") 
         {
             this._size = size;
@@ -142,17 +146,27 @@ class Pizza {
     {
         return this._ingredients;
     }
+
+    write()
+    {
+        console.log(this.name, this.size, this.price);
+    }
 };
 
 class Drink {
     constructor(name, price) {
-        if(name in Object.values(drink_names)) 
+        this._name = "none"; 
+        for (const n in drink_names) 
         {
-            this._name = name;    
+            if (name === drink_names[n]) 
+            {
+                this._name = name;
+            }
         }
-        else 
+        
+        if (this._name === "none") 
         {
-            console.log(`Specified name: ${name} is not defined.`)
+            console.log(`This drink ${name} does not exist!`)
         }
 
         if (isNaN(price)) 
@@ -172,6 +186,11 @@ class Drink {
     get price() 
     {
         return this._price;
+    }
+
+    write()
+    {
+        console.log(this.name, this.price);
     }
 };
 
@@ -206,33 +225,19 @@ class Menu {
         this._drink_list = drink_list;
     }
 
-    pizza() 
-    {    
-        for (const key in this.pizza_list) 
-        {
-            if (Object.hasOwnProperty.call(this.pizza_list, key)) 
-            {
-                const element = this.pizza_list[key];
-                return element;
-            }
-        }
-    }
-    drink() 
+    write()
     {
-        for (const key in this.drink_list) 
-        {
-            if (Object.hasOwnProperty.call(this.drink_list, key)) 
-            {
-                const element = this.drink_list[key]
-                return element;         
-            }   
+        for (const pizza of this._pizza_list) {
+            pizza.write();    
+        }
+        for (const drink of this._drink_list) {
+            drink.write();    
         }
     }
 };
 
-let menu = new Menu()
-console.log(menu.pizza());
-console.log(menu.drink());
+let menu = new Menu
+menu.write();
 
 
 /*
@@ -252,6 +257,7 @@ console.log(menu.drink());
 const output = () => 
     {
         const chosen_pizza = document.getElementById('velgpizza').value;
+        const chosen_pizza_size = document.getElementById('velgstorleik').value;
         const chosen_drink = document.getElementById('velgdrikke').value;
         const number_of_drinks = document.getElementById('antalldrikke').value;
         const extra = document.getElementById('Ekstra').value;
@@ -286,22 +292,43 @@ const output = () =>
             pizza_array.push(extra)
         };
 
+        const ingredients = pizza_array.sort().join(", ")
+
+        /*
+         * Check if the pizza size is Big or Small and Create an Object of type Pizza.
+         */
+
+        let pizza = "";
+        let drink = "";
+
+
+        if (chosen_pizza_size === 'Big')
+        {
+            pizza = new Pizza(pizza_names[chosen_pizza], chosen_pizza_size, pizza_price_large[chosen_pizza], ingredients);
+        }
+        else 
+        {
+            pizza = new Pizza(pizza_names[chosen_pizza], chosen_pizza_size, pizza_price_small[chosen_pizza], ingredients);
+        };
+
+        drink = new Drink(drink_names[chosen_drink], drink_price[chosen_drink]);
+        
         /*
          * Add the price for the pizza and the drink.
          */
 
-        const total_price = pizza_price_small[chosen_pizza] + pizza_price_large[chosen_pizza] + (drink_price[chosen_drink] * number_of_drinks);
-        const total_price_mva = pizza_price_small[chosen_pizza] + (pizza_price_small[chosen_pizza] / 5)  + pizza_price_large[chosen_pizza] + pizza_price_large[chosen_pizza] / 5 + ((drink_price[chosen_drink] + (drink_price[chosen_drink]) / 5) * number_of_drinks);
+        const total_price_without_mva = pizza.price + drink.price * number_of_drinks;
+        const total_price_mva = total_price_without_mva * 1.25;
         /*
          * Putting all the info info one string and sending it back to the website.
          */
         
         const pizza_output = `
         Pizza: ${pizza_names[chosen_pizza]} <br>
-        Topping: ${pizza_array.sort().join(", ")} <br>
+        Topping: ${ingredients} <br>
         Drikke:  ${drink_names[chosen_drink]}  ${number_of_drinks} stk. <br>
-        Pris uten mva:  ${total_price}kr <br>
+        Pris uten mva:  ${total_price_without_mva}kr <br>
         Pris med mva: ${total_price_mva}kr`;
     
-        document.getElementById('result').innerHTML = pizza_output;
+        document.getElementById('kvittering').innerHTML = pizza_output;
     };
