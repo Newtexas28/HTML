@@ -9,7 +9,23 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        
+        <h1>Avatar</h1>
+        <div id = "input">
+            <label>Skriv inn namn:</label> <br>
+            <input id = "Name" type="text" onchange = "Avatar_function();"> <br>
+            <label>Skriv inn størrelse</label> <br>
+            <input id= "Size" type="number" onchange = "Avatar_function();"> <br>
+            <label>Skriv inn farga</label> <br>
+            <input id = "Color" type="color" onchange = "Avatar_function();"> <br>
+            <label>Skriv inn farten</label> <br>
+            <input id = "Speed" type="number" onchange = "Avatar_function();"> <br>
+        </div>
+
+        <div id="Info">
+        </div>
+        <div>
+            <button id="Passert tid" onchange = "Time();">Trykk for å starte og avslutte</button>
+        </div>
         <script src="js/main.js" async defer></script>
     </body>
 </html>
