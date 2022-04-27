@@ -4,6 +4,8 @@
  * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
  */
 
+import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
+
 class Avatar {
     constructor (name, size, color, speed, fuel) {
         
@@ -147,23 +149,15 @@ class Robot_Avatar extends Avatar {
     }
 }
 
-/*
- * Declering Date.now()
- * 
- */
-
-let start = new Date(); 
-let end = new Date();
-
-const Time = () =>
+const fuel_calculations = (Max_volume, speed, time_from_start) => 
 {
-    let end = new Date()
-    let elapsed = end.getTime() - start.getTime()
-}
 
+};
 
-
-
+startHandler();
+stopHandler();
+updateTimer();
+updateLabel();
 
 /*
  * Collecting value from the website
