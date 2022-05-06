@@ -6,11 +6,12 @@
         <title>Avatar</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <h1>Avatar</h1>
-        <div id = "input">
+        <div class = "Avatar" id = "input">
             <label>Skriv inn namn:</label> <br>
             <input id = "Name" type="text" onchange = "Avatar_function();"> <br>
             <label>Skriv inn størrelse</label> <br>
@@ -19,16 +20,28 @@
             <input id = "Color" type="color" onchange = "Avatar_function();"> <br>
             <label>Skriv inn farten</label> <br>
             <input id = "Speed" type="number" onchange = "Avatar_function();"> <br>
+            <h3>Choose Avatar</h3> <br>
+            <select>
+                <option onchange="Avatar_function();">Car</option>
+                <option type="radio" onchange="Avatar_function();">SpaceShip</option>
+                <option type="radio" onchange="Avatar_function();">Robot</option> 
+            <select> <br>
+            <h3>Drive!</h3> <br>
+            <button id="Start" data-playing="false" role="switch" aria-checked="false">
+                <span>Start</span>
+            </button>
+            <button id="Stop">Stop</button>
+            <h3>Elapsed Time:</h3>
+            <p id="Time"></p> <br>
         </div>
-
-        <h1>Stop Watch</h1>
-        <button id="Start">Start</button>
-        <button id="Stop">Stop</button>
-        <h3>Elapsed Time:</h3>
-        <p id="Time"></p>
-
-        </div>
+        <audio onplaying="myAudio();">
+            <source src="Media/Audio files/Car acceleration.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+        </audio>
+        <img id="imgCar" class="picture" src="Media/Pictures files/Car.png">
+        
+            
         <script type="module" src="js/main.js" async defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        
     </body>
 </html>

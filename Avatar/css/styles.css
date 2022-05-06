@@ -1,4 +1,41 @@
+.Avatar {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: auto;
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 400px;
+    grid-template-areas: 
+    "tittel tittel"
+    "input input"
+    "picture picture";
+}
+
+.tittel {
+    grid-area: tittel;
+    font-size: large;
+}
+
+.picture {
+    grid-area: picture;
+}
+
+.picture img {
+    max-width: 170px;
+    max-height: 150px;
+}
+
 #Time {
     background-color: yellow;
-    max-width: 5%;
+    max-width: 22%;
 }
+
+#imgCar {
+    width: 300px;
+}
+
+body {
+    margin: 10px;
+    background-color: beige;
+} 

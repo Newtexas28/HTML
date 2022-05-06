@@ -1,12 +1,10 @@
 /*
  * Declering timeDisply this
  * Code snippet is from the website: https://stackoverflow.com/questions/54798493/how-to-use-event-handlers-with-update-function-to-start-and-stop-a-stopwatch 
- * It is here to calculate time from a spesific point in time to anhnother
+ * It is here to calculate time from a spesific point in time to ahnother
  * .
  */
 
-const Stop = document.getElementById('Stop');
-const Start = document.getElementById('Start');
 let watchIntervalTimer;
 let countingSince;
 

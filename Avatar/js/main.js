@@ -4,6 +4,7 @@
  * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
  */
 
+
 import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
 
 class Avatar {
@@ -153,11 +154,59 @@ const fuel_calculations = (Max_volume, speed, time_from_start) =>
 {
 
 };
+const Stop = document.getElementById('Stop');
+const Start = document.getElementById('Start');
+const audio = document.getElementById("myAudio");
 
 startHandler();
 stopHandler();
 updateTimer();
 updateLabel();
+
+gsap.from("#imgCar", {duration: 3, opacity: 0, scale: 0.5});
+
+const Driving = gsap.to('#imgCar', {duration: 10, x: 500, paused: true , yoyo: true, repeat: 1});
+
+Stop.addEventListener('click', pauseDriving);
+Start.addEventListener('click', resumeDriving);
+
+
+function resumeDriving() {
+    console.log('resumeDriving');
+    Driving.play();
+};
+
+function pauseDriving() {
+    console.log('pauseDriving');
+    Driving.pause();
+};
+
+const audioContext = new AudioContext();
+const audioElement = document.querySelector( 'audio' );
+const track = audioContext.createMediaElementSource(audioElement);
+track.connect( audioContext.destination );
+
+const playButton = document.getElementById( 'Start' );
+const stopButton = document.getElementById( 'Stop' )
+
+playButton.addEventListener('click', function() {
+    if ( audioContext.state === 'suspended' ) {
+        audioContext.resume();
+    }
+
+    if ( this.dataset.playing === 'false' ) {
+        audioElement.play();
+        this.dataset.playing = 'true';
+    } else if ( this.dataset.playing === 'true' ) {
+        audioElement.pause();
+        this.dataset.playing = 'false';
+    }
+
+}, false);
+
+audioElement.addEventListener('ended', () => {
+    playButton.dataset.playing = 'false';
+}, false);
 
 /*
  * Collecting value from the website
