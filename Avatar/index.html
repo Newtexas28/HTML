@@ -15,22 +15,23 @@
         <button onclick="Avatar_race();">Hello</button> <br>
         <div class = "Avatar" id="Input">
             <label>Skriv inn namn:</label> <br>
-            <input id = "Name" type="text" onblur="Avatar_function();"> <br>
+            <input id = "Name" type="text"> <br>
             <label>Skriv inn størrelse</label> <br>
-            <input id= "Size" type="number" onblur = "Avatar_function();"> <br>
+            <input id= "Size" type="number"> <br>
             <label>Skriv inn farga</label> <br>
-            <input id = "Color" type="color" onblur = "Avatar_function();"> <br>
+            <input id = "Color" type="color"> <br>
             <label>Skriv inn farten</label> <br>
-            <input id = "Speed" type="number" onblur = "Avatar_function();"> <br>
+            <input id = "Speed" type="number"> <br>
             <label>Velg Avatar</label> <br>
-            <select>
-                <option onblur="Avatar_function();">Car</option>
-                <option type="radio" onblur="Avatar_function();">SpaceShip</option>
-                <option type="radio" onblur="Avatar_function();">Robot</option> 
-            <select> <br>  
+            <select id="choose_virecal">
+                <option>Car</option>
+                <option>SpaceShip</option>
+                <option>Robot</option> 
+            </select> <br>  
+                <button onclick="avatar_info();">Hallp</button>
                 <p id="Info"></p>
         </div>
-        
+
         <div id="Race">
             <h3>Car Info!</h3> <br>
             <p id="Info"></p>

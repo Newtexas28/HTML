@@ -4,7 +4,6 @@
  * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
  */
 
-
 import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
 
 class Avatar {
@@ -101,7 +100,7 @@ class Car_Avatar extends Avatar {
     {
         return this._wheel_size;
     }
-}
+};
 
 
 class Space_ship_Avatar extends Avatar {
@@ -156,7 +155,7 @@ const fuel_calculations = (Max_volume, speed, time_from_start) =>
 };
 const Stop = document.getElementById('Stop');
 const Start = document.getElementById('Start');
-const audio = document.getElementById("myAudio");
+
 
 startHandler();
 stopHandler();
@@ -228,13 +227,13 @@ function Avatar_race() {
     if (Condition === true) {
         input.style.display = "none";
         race.style.display = "block";
-        Condition = false
+        Condition = false;
     }
 
     else if (Condition === false) {
         input.style.display = "block";
         race.style.display = "none";
-        Condition = true
+        Condition = true;
     }
 };
 
@@ -243,11 +242,11 @@ function Avatar_race() {
  *
  */ 
 
-const Avatar_function = () => {
-    const name = document.getElementById( 'Name' ).value;
-    const size = document.getElementById( 'Size' ).value;
-    const color = document.getElementById( 'Color' ).value;
-    const speed = document.getElementById( 'Speed' ).value;
+const avatar_info = () => {
+    const name = document.getElementById('Name');
+    const size = document.getElementById('Size');
+    const color = document.getElementById('Color');
+    const speed = document.getElementById('Speed');
 
     const information = `
     Name: ${name}
@@ -255,6 +254,5 @@ const Avatar_function = () => {
     Color: ${color}
     Speed: ${speed}`
 
-    document.getElementById( 'Info' ).innerHTML = information;
+    document.getElementById('Info').innerHTML = information;
 };
-
