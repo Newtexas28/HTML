@@ -1,7 +1,7 @@
 /*
  * Declering timeDisply this
  * Code snippet is from the website: https://stackoverflow.com/questions/54798493/how-to-use-event-handlers-with-update-function-to-start-and-stop-a-stopwatch 
- * It is here to calculate time from a spesific point in time to ahnother
+ * It is here to calculate time from a spesific point in time to aother
  * .
  */
 

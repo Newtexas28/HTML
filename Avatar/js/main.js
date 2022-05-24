@@ -74,7 +74,7 @@ class Avatar {
     {
     (100 - fuel_consumption)     
     }
-}
+};
 
 class Car_Avatar extends Avatar {
     constructor(name, size, color, speed, engine, wheel_size, fuel) {
@@ -129,7 +129,7 @@ class Space_ship_Avatar extends Avatar {
     {
         return this._fuel;
     }
-}
+};
 
 class Robot_Avatar extends Avatar {
     constructor(name, size, color, speed, prosessing_unit, battery) {
@@ -148,7 +148,7 @@ class Robot_Avatar extends Avatar {
     {
         return this._battery;
     }
-}
+};
 
 const fuel_calculations = (Max_volume, speed, time_from_start) => 
 {
@@ -165,7 +165,8 @@ updateLabel();
 
 gsap.from("#imgCar", {duration: 3, opacity: 0, scale: 0.5});
 
-const Driving = gsap.to('#imgCar', {duration: 10, x: 500, paused: true , yoyo: true, repeat: 1});
+const Driving = gsap.to('#imgCar', {duration: 10, x: 500, paused: true , yoyo: true, repeat: 30});
+const Drifting = gsap.to('#imgCar', {duration: 10, x: 500, paused: true})
 
 Stop.addEventListener('click', pauseDriving);
 Start.addEventListener('click', resumeDriving);
@@ -187,7 +188,7 @@ const track = audioContext.createMediaElementSource(audioElement);
 track.connect( audioContext.destination );
 
 const playButton = document.getElementById( 'Start' );
-const stopButton = document.getElementById( 'Stop' )
+const stopButton = document.getElementById( 'Stop')
 
 playButton.addEventListener('click', function() {
     if ( audioContext.state === 'suspended' ) {
@@ -197,29 +198,56 @@ playButton.addEventListener('click', function() {
     if ( this.dataset.playing === 'false' ) {
         audioElement.play();
         this.dataset.playing = 'true';
-    } else if ( this.dataset.playing === 'true' ) {
-        audioElement.pause();
-        this.dataset.playing = 'false';
+    }
+    else if ( this.dataset.playing === 'true' ) {
+        audioElement.play()
+        this.dataset.false
+    }
+}, false);
+
+stopButton.addEventListener('click', function() {
+    if ( audioContext.state === 'suspended' ) {
+        audioContext.resume();
     }
 
+    if ( this.dataset.playing = 'true' ) {
+       audioElement.pause();
+       this.dataset.playing = 'false';
+   };
 }, false);
 
 audioElement.addEventListener('ended', () => {
     playButton.dataset.playing = 'false';
 }, false);
 
+let Condition = true;
+function Avatar_race() {
+    const input = document.getElementById( 'Input' );
+    const race = document.getElementById( 'Race' );
+        
+    if (Condition === true) {
+        input.style.display = "none";
+        race.style.display = "block";
+        Condition = false
+    }
+
+    else if (Condition === false) {
+        input.style.display = "block";
+        race.style.display = "none";
+        Condition = true
+    }
+};
+
 /*
  * Collecting value from the website
  *
  */ 
 
-
-const Avatar_function = () => 
-{
-    const name = document.getElementById('Name').value;
+const Avatar_function = () => {
+    const name = document.getElementById( 'Name' ).value;
     const size = document.getElementById( 'Size' ).value;
-    const color = document.getElementById('Color').value;
-    const speed = document.getElementById('Speed').value;
+    const color = document.getElementById( 'Color' ).value;
+    const speed = document.getElementById( 'Speed' ).value;
 
     const information = `
     Name: ${name}
@@ -227,6 +255,6 @@ const Avatar_function = () =>
     Color: ${color}
     Speed: ${speed}`
 
-    document.getElementById('Info').innerHTML = information;
-}
+    document.getElementById( 'Info' ).innerHTML = information;
+};
 

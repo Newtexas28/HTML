@@ -5,25 +5,16 @@
     border: 2px solid black;
     padding-left: 5px;
     padding-right: 5px;
+    padding-bottom: 10px;
     max-width: 400px;
     grid-template-areas: 
     "tittel tittel"
-    "input input"
-    "picture picture";
+    "input input";
 }
 
 .tittel {
     grid-area: tittel;
     font-size: large;
-}
-
-.picture {
-    grid-area: picture;
-}
-
-.picture img {
-    max-width: 170px;
-    max-height: 150px;
 }
 
 #Time {
@@ -38,4 +29,12 @@
 body {
     margin: 10px;
     background-color: beige;
-} 
+}
+
+/*Input {
+    display: block;
+}
+
+#Race {
+    display: none;
+}*/
