@@ -4,7 +4,7 @@
  * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
  */
 
-import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
+//import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
 
 class Avatar {
     constructor (name, size, color, speed, fuel) {
