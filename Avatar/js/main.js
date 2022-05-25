@@ -4,7 +4,6 @@
  * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
  */
 
-import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
 
 class Avatar {
     constructor (name, size, color, speed, fuel) {
@@ -244,16 +243,19 @@ function Avatarrace() {
 
 const output = () => 
     {
-        const name = document.getElementById('Name');
-        const size = document.getElementById('Size');
-        const color = document.getElementById('Color');
-        const speed = document.getElementById('Speed');
+        const name = document.getElementById('Name').value;
+        const size = document.getElementById('Size').value;
+        const color = document.getElementById('Color').value;
+        const speed = document.getElementById('Speed').value;
+        const choose_car = document.getElementById('Choose_car').value;
+
+        name.toString()
 
         const information = `
-        Name: ${name}
-        Size: ${size}
-        Color: ${color}
-        Speed: ${speed}`
+        Name: ${name} <br>
+        Size: ${size} <br>
+        Color: ${color} <br>
+        Speed: ${speed} <br>`
 
         document.getElementById('Info').innerHTML = information;
     };

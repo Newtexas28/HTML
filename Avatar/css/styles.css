@@ -19,7 +19,7 @@
 
 #Time {
     background-color: yellow;
-    max-width: 22%;
+    max-width: 40px;
 }
 
 #imgCar {
@@ -31,10 +31,10 @@ body {
     background-color: beige;
 }
 
-/*Input {
+Input {
     display: block;
 }
 
 #Race {
     display: none;
-}*/
+}

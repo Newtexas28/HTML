@@ -331,4 +331,4 @@ const output = () =>
         Pris med mva: ${total_price_mva}kr`;
     
         document.getElementById('kvittering').innerHTML = pizza_output;
-    };
+    }; 
