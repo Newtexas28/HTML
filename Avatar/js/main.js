@@ -220,7 +220,7 @@ audioElement.addEventListener('ended', () => {
 }, false);
 
 let Condition = true;
-function Avatar_race() {
+function Avatarrace() {
     const input = document.getElementById( 'Input' );
     const race = document.getElementById( 'Race' );
         
@@ -242,17 +242,18 @@ function Avatar_race() {
  *
  */ 
 
-const avatar_info = () => {
-    const name = document.getElementById('Name');
-    const size = document.getElementById('Size');
-    const color = document.getElementById('Color');
-    const speed = document.getElementById('Speed');
+const output = () => 
+    {
+        const name = document.getElementById('Name');
+        const size = document.getElementById('Size');
+        const color = document.getElementById('Color');
+        const speed = document.getElementById('Speed');
 
-    const information = `
-    Name: ${name}
-    Size: ${size}
-    Color: ${color}
-    Speed: ${speed}`
+        const information = `
+        Name: ${name}
+        Size: ${size}
+        Color: ${color}
+        Speed: ${speed}`
 
-    document.getElementById('Info').innerHTML = information;
-};
+        document.getElementById('Info').innerHTML = information;
+    };
