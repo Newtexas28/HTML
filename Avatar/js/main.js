@@ -163,11 +163,20 @@ updateLabel();
 
 gsap.from("#imgCar", {duration: 3, opacity: 0, scale: 0.5});
 
-const Driving = gsap.to('#imgCar', {duration: 10, x: 500, paused: true , yoyo: true, repeat: 30});
-const Drifting = gsap.to('#imgCar', {duration: 10, x: 500, paused: true})
+const Driving = gsap.to('#imgCar', {duration: 1, x: 500, paused: true , yoyo: true, repeat: 30});
+const Drifting = gsap.to('#imgCar', {duration: 1, x: 500, paused: true});
+const Chocing_car = gsap.to('imgCar', {duration: 1, x: 500, paused: true})
 
 Stop.addEventListener('click', pauseDriving);
 Start.addEventListener('click', resumeDriving);
+
+
+const random_driving = () => {
+    const value = Math.floor(Math.random() * Object.keys(jokes).length);
+    return value;
+};
+
+
 
 
 function resumeDriving() {
