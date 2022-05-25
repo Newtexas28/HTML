@@ -8,12 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script  type="module" src="js/main.js" async defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="js/Time.js" async defer></script> 
+        <script src="js/main.js" async defer></script> 
         <link rel="stylesheet" href="css/styles.css">
         <link rel="shortcut icon" href="#">
     </head>
     <body>
         <h1>Avatar</h1>
-        <button onclick="Avatarrace();">Hello</button> <br>
+        <h2>Lag din bil</h2>
         <div class = "Avatar" id="Input">
             <label>Skriv inn namn:</label> <br>
             <input id = "Name" type="text"> <br>
@@ -23,19 +25,21 @@
             <input id = "Color" type="color"> <br>
             <label>Skriv inn farten</label> <br>
             <input id = "Speed" type="number"> <br>
-            <label>Velg Avatar</label> <br>
-            <select id="choose_virecal">
-                <option>Car</option>
+            <label>Velg Bil merke</label> <br>
+            <select id="Choose_car">
+                <option value="Car">Car</option>
                 <option>SpaceShip</option>
                 <option>Robot</option> 
             </select> <br>  
-                <button id="output" onclick="output();">Hallp</button>
-                <p id="Info"></p>
         </div>
+
+        <h2>Racingbane</h2>
+        <button onclick="Avatarrace();">Bytt mellom bil og racingbane</button> <br>
 
         <div id="Race">
             <h3>Car Info!</h3> <br>
-            <p id="Info"></p>
+            <button onclick="output();">Bil info</button>
+                <p id="Info"></p> <br>
             <button id="Start" data-playing="false" role="switch" aria-checked="false">
                 <span>Start</span>
             </button>
@@ -51,6 +55,8 @@
                 Your browser does not support HTML5 audio.
             </audio>
             <img id="imgCar" class="picture" src="Media/Pictures files/Car.png">
-        </div> 
+            <img id="lambo" src="https://www.google.com/search?q=pictures+of+lamborghini+from+above&client=opera-gx&hs=dYz&sxsrf=ALiCzsb64zCm2dDBKbW9bixqj3gnzDkrKQ:1653502838178&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjd0LeKovv3AhUPSPEDHdbsAsEQ_AUoAXoECAEQAw&biw=1495&bih=683&dpr=1.25#imgrc=y0Cqg5ph8OEKQM">
+            <img id="ferrari" src="https://www.google.com/search?q=pictures+of+ferrari+from+above&tbm=isch&ved=2ahUKEwi4qM-Movv3AhXRxyoKHUV0C40Q2-cCegQIABAA&oq=pictures+of+ferrari+from+above&gs_lcp=CgNpbWcQAzoECCMQJzoICAAQHhAIEAc6BggAEB4QBzoGCAAQHhAIUKscWPhEYN9MaABwAHgBgAHoAYgB1RWSAQYwLjE4LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=enOOYriDLtGPqwHF6K3oCA&bih=683&biw=1495&client=opera-gx&hs=dYz#imgrc=Y5CsA2D7RYDr6M">
+        </div>
     </body>
 </html>

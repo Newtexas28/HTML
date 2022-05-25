@@ -4,7 +4,6 @@
  * Author: Jon Håkon Lia <jonlia28@innlandetfylke.no>
  */
 
-import { startHandler, stopHandler, updateTimer, updateLabel } from "./Time.js";
 
 class Avatar {
     constructor (name, size, color, speed, fuel) {
@@ -164,11 +163,20 @@ updateLabel();
 
 gsap.from("#imgCar", {duration: 3, opacity: 0, scale: 0.5});
 
-const Driving = gsap.to('#imgCar', {duration: 10, x: 500, paused: true , yoyo: true, repeat: 30});
-const Drifting = gsap.to('#imgCar', {duration: 10, x: 500, paused: true})
+const Driving = gsap.to('#imgCar', {duration: 1, x: 500, paused: true , yoyo: true, repeat: 30});
+const Drifting = gsap.to('#imgCar', {duration: 1, x: 500, paused: true});
+const Chocing_car = gsap.to('imgCar', {duration: 1, x: 500, paused: true})
 
 Stop.addEventListener('click', pauseDriving);
 Start.addEventListener('click', resumeDriving);
+
+
+const random_driving = () => {
+    const value = Math.floor(Math.random() * Object.keys(jokes).length);
+    return value;
+};
+
+
 
 
 function resumeDriving() {
@@ -244,16 +252,19 @@ function Avatarrace() {
 
 const output = () => 
     {
-        const name = document.getElementById('Name');
-        const size = document.getElementById('Size');
-        const color = document.getElementById('Color');
-        const speed = document.getElementById('Speed');
+        const name = document.getElementById('Name').value;
+        const size = document.getElementById('Size').value;
+        const color = document.getElementById('Color').value;
+        const speed = document.getElementById('Speed').value;
+        const choose_car = document.getElementById('Choose_car').value;
+
+        name.toString()
 
         const information = `
-        Name: ${name}
-        Size: ${size}
-        Color: ${color}
-        Speed: ${speed}`
+        Name: ${name} <br>
+        Size: ${size} <br>
+        Color: ${color} <br>
+        Speed: ${speed} <br>`
 
         document.getElementById('Info').innerHTML = information;
     };
