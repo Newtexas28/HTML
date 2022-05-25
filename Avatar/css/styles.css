@@ -7,22 +7,19 @@
     padding-right: 5px;
     padding-bottom: 10px;
     max-width: 400px;
-    grid-template-areas: 
-    "tittel tittel"
-    "input input";
 }
 
-.tittel {
-    grid-area: tittel;
-    font-size: large;
-}
+
 
 #Time {
     background-color: yellow;
     max-width: 40px;
 }
 
-#imgCar {
+#Lambo {
+    width: 300px;
+}
+#Ferrari {
     width: 300px;
 }
 
@@ -37,4 +34,27 @@ Input {
 
 #Race {
     display: none;
+}
+
+.Racingtrack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    border: 2px solid black;
+    background-color: black;
+    padding-left: 5px;
+    padding-right: 550px;
+    padding-bottom: 10px;
+    max-width: 400px;
+    grid-template-areas: 
+    "Lambo"
+    "Ferrari";
+}
+
+.Lambo {
+    grid-area: Lambo;
+}
+
+.Ferrari {
+    grid-area: Ferrari;
 }
