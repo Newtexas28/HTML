@@ -152,6 +152,12 @@ const fuel_calculations = (Max_volume, speed, time_from_start) =>
 {
 
 };
+
+/*
+ * Declering the variabels Start ant Stop and 
+ * Assignig the to the values from the id's from htlm 'start' and 'stop'.
+ */
+
 const Stop = document.getElementById('Stop');
 const Start = document.getElementById('Start');
 
@@ -161,14 +167,16 @@ stopHandler();
 updateTimer();
 updateLabel();
 
-gsap.from("#imgCar", {duration: 3, opacity: 0, scale: 0.5});
+/*
+ * Make Animation for the Cars
+ * 
+ */ 
+
+gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 0.5});
 
 const Driving = gsap.to('#Lambo', {duration: 1, x: 500, paused: true , yoyo: true, repeat: 30});
 const Drifting = gsap.to('#Lambo', {duration: 1, x: 500, paused: true});
 const Chocing_car = gsap.to('#Lambo', {duration: 1, x: 500, paused: true})
-
-Stop.addEventListener('click', pauseDriving);
-Start.addEventListener('click', resumeDriving);
 
 
 const random_driving = () => {
@@ -176,7 +184,9 @@ const random_driving = () => {
     return value;
 };
 
-
+/*
+ * Making function to start and stop the animation of the cars driving.
+ */
 
 
 function resumeDriving() {
@@ -189,11 +199,41 @@ function pauseDriving() {
     Driving.pause();
 };
 
+Stop.addEventListener('click', pauseDriving);
+Start.addEventListener('click', resumeDriving);
+
+/*
+ * Assign the variabel audioContext to AudioContext()
+ * Assign the variabel audioElement to collects the audio from html.
+ * using a querSelector to look for the first element,
+ * that matches the discription 'audio'
+ * The variabel track is assign the audioelement from html.
+ */
+
 const audioContext = new AudioContext();
 const audioElement = document.querySelector( 'audio' );
 const track = audioContext.createMediaElementSource(audioElement);
 track.connect( audioContext.destination );
 
+
+/*
+ * Declering playButton and stopButton that collects the values from 'Start' and 'Stop'
+ * Then assign both playButton and stopButton to two diffrent addEventListener
+ * This code controls the backgroud sound when the cars are raceing.
+ * 
+ * Inside the addEventListener playButton the code check first if the audio file is suspended.
+ * If the audio file is suspended then audioContext will be sett to resume playing. 
+ * Then it check if the dataset === 'false', then set audioElement to audioElement.play()
+ * and set dataset === 'true'
+ * If this.dataset.playing === 'true', then play the dataset and set dataset to 'false'.
+ * 
+ * Inside the addEventListener stopButton, the code check if audioContext === 'suspended'.
+ * If audio element is 'suspended' set audioContext to audioContext.resume().
+ * If the this.dataset.playing === 'trur', pause audioElement and set dataset to false. 
+ * 
+ * The last addEventListener audioElement checks if the audio element has stopped playing,
+ * if so, set playButton.dataset.playing = 'false'
+ */
 const playButton = document.getElementById( 'Start' );
 const stopButton = document.getElementById( 'Stop')
 
