@@ -5,27 +5,33 @@
  */
 
 
-/*
- * Made a class called AVatar thet collect diffrent values and
- * returns the values in an object.
- *  
- * Than i made a child class that exstends from the avatar class called, 
- * Car_avatar. Car_avatar thakes tha properies from Avatar and use them and
- * also make values of its own.
- * 
+/* 
  * This code however is outdated now if i am going to be using classes,
  * i will change the parant calss up so it has the properise of Car_Avatar.
  * Then i will make child classes that exstends from the perent class but, 
  * the childclasses will each be for a individual car, 
  * that can be modifyide by the user.
  */ 
-class Avatar {
-    constructor (name, size, color, speed, fuel) {
+    
+
+class Car_Avatar extends Avatar {
+    constructor(name, color, speed, engine, wheel_size, fuel) {
+        
+        if (isNaN(wheel_size)) 
+        {
+           console.log(`${wheel_size} is not a number`);
+        } 
+        
+        else 
+        {
+            this._wheel_size = wheel_size;
+        }
         
         if (isNaN(size)) 
         {
            console.log(`${size} is not a number`);
         } 
+        
         else 
         {
             this._size = size;
@@ -35,6 +41,7 @@ class Avatar {
         {
            console.log(`${speed} is not a number`);
         } 
+        
         else 
         {
             this._speed = speed;
@@ -44,6 +51,7 @@ class Avatar {
         {
            console.log(`${fuel} is not a number`);
         } 
+        
         else 
         {
             this._fuel = fuel;
@@ -51,6 +59,7 @@ class Avatar {
 
         this._name = name;
         this._color = color;
+        this._engine = engine;
     }
 
     get name() 
@@ -77,33 +86,7 @@ class Avatar {
     {
         return this._fuel;
     }
-
-    fuel_consumption(min_value, rate_of_consumption)
-    {
-        return (min_value + (this._speed * rate_of_consumption)) 
-    }
-    fuel_level() 
-    {
-    (100 - fuel_consumption)     
-    }
-};
-
-class Car_Avatar extends Avatar {
-    constructor(name, size, color, speed, engine, wheel_size, fuel) {
-        super(name, size, color, speed);
-
-        if (isNaN(wheel_size)) 
-        {
-           console.log(`${wheel_size} is not a number`);
-        } 
-        else 
-        {
-            this._wheel_size = wheel_size;
-        }
         
-        this._engine = engine;
-    }
-
     get engine()
     {
         return this._engine;
@@ -113,57 +96,16 @@ class Car_Avatar extends Avatar {
     {
         return this._wheel_size;
     }
-};
-
-/*
-class Space_ship_Avatar extends Avatar {
-    constructor(name, size, color, speed, engine, fuel) {
-        super(name, size, color, speed);
-
-        if (isNaN(fuel)) 
-        {
-           console.log(`${fuel} is not a number`);
-        } 
-        else 
-        {
-            this._fuel = fuel;
-        }
-        
-        this._engine = engine;
-    }
-
-    get engine()
+    
+    fuel_consumption(min_value, rate_of_consumption)
     {
-        return this._engine;
+        return (min_value + (this._speed * rate_of_consumption)) 
     }
-
-    get fuel()
+    
+    fuel_level() 
     {
-        return this._fuel;
+    (100 - fuel_consumption)     
     }
-};
-
-class Robot_Avatar extends Avatar {
-    constructor(name, size, color, speed, prosessing_unit, battery) {
-        super(name, size, color, speed);
-        
-        this._prosessing_unit = prosessing_unit;
-        this._battery  = battery;
-    }
-
-    get prosessing_unit()
-    {
-        return this._prosessing_unit;
-    }
-
-    get battery()
-    {
-        return this._battery;
-    }
-};
-*/
-const fuel_calculations = (Max_volume, speed, time_from_start) => 
-{
 
 };
 
