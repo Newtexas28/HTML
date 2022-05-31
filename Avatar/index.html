@@ -12,6 +12,7 @@
         <script src="js/main.js" async defer></script>  
         <link rel="stylesheet" href="css/styles.css">
         <link rel="shortcut icon" href="#">
+        <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
     </head>
     <body>
         <h1>Avatar</h1>
@@ -19,8 +20,8 @@
         <div class = "Avatar" id="Input">
             <label> Choose Carbrand</label> <br>
             <select id="Choose_car" onchange="output();">
-                <option value="Car">Lambo</option>
-                <option>Ferrari</option>
+                <option value="Lambo" style="font-family: 'Alfa Slab One'; background-color: rgba(212, 144, 17, 0.812); color: black">Lambo</option>
+                <option value="Ferrari" style="font-family: 'Alfa Slab One'; background-color: rgba(212, 144, 17, 0.812); color: black">Ferrari</option>
             </select> <br>
             <label>Write inn name of the car:</label> <br>
             <input id = "Name" type="text" onchange="output();"> <br>
@@ -34,8 +35,8 @@
             <input id = "Fuel" type="text" onchange="output();"> <br>  
         </div>
 
-        <h2>Racingbane</h2>
-        <button onclick="Avatarrace();">Bytt mellom bil og racingbane</button> <br>
+        <h2>Racingtrack</h2>
+        <button  id="Switch" onclick="Avatarrace();">Switch between Car custimasation and racingtrack</button> <br>
 
         <div id="Race">
             <h3>Car Info!</h3> <br>

@@ -168,6 +168,7 @@ const output = () =>
         name.toString()
 
         const information = `
+        Carbrand : ${choose_car} <br>
         Name of the car: ${name} <br>
         Production year: ${productions_year} <br>
         Color: ${color} <br>
@@ -271,8 +272,8 @@ audioElement.addEventListener('ended', () => {
  * The first two animation is for when the cars spwan on the track
  */ 
 
-gsap.from("#Ferrari", {duration: 3, opacity: 0, scale: 0.5});
-gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 0.5});
+gsap.from("#Ferrari", {duration: 3, opacity: 1, scale: 0.5});
+gsap.from("#Lambo", {duration: 3, opacity: 1, scale: 0.5});
 
 /*
  * These are three diffrent animations is for when the ferrari drives.
@@ -281,7 +282,7 @@ gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 0.5});
  * with the pictures htat have the id's "Ferrari" and "Lambo".
  */ 
 
-const Driving_Ferrari = gsap.to('#Ferrari', {duration: 50, x: 5100, y:10, z: 200, paused: true });
+const Driving_Ferrari = gsap.to('#Ferrari', {duration: 50, x: 5100, y:10, paused: true });
 const Drifting_Ferrari = gsap.to('#Ferrari', {duration: 80, x: 5100, y: 10, paused: true});
 const Chocing_car_Ferrari = gsap.to('#Ferrari', {duration: 100, x: 5100, y: 10, paused: true})
 
@@ -328,5 +329,9 @@ function pauseDriving() {
     Driving_styels_Lambo[random_driving_Lambo].pause();
 };
 
+
+/*
+ * Add addeventListener on Stop and Start
+ */
 Stop.addEventListener('click', pauseDriving);
 Start.addEventListener('click', resumeDriving);

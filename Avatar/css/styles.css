@@ -1,19 +1,31 @@
 .Avatar {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-    border: 2px solid black;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 10px;
     max-width: 400px;
 }
 
+#Switch {
+    font-family: 'Alfa Slab One'; 
+    background-color: rgba(212, 144, 17, 0.812); 
+    color: black"
+}
 
+#Start {
+    font-family: 'Alfa Slab One'; 
+    background-color: rgba(212, 144, 17, 0.812); 
+    color: black"
+}
+
+#Stop {
+    font-family: 'Alfa Slab One'; 
+    background-color: rgba(212, 144, 17, 0.812); 
+    color: black"
+}
 
 #Time {
     background-color: yellow;
-    max-width: 40px;
+    max-width: 65px;
 }
 
 #Lambo {
@@ -25,11 +37,21 @@
 
 body {
     margin: 10px;
-    background-color: beige;
+    background-image: url(https://img.wallpapersafari.com/desktop/1600/900/35/24/AsF9hY.jpg);
+    background-color: #cccccc;
+    background-size: 1500px;
+    background-repeat: repeat;
+    position: relative;
+    font-family: 'Alfa Slab One';
+    font-size: 20px;
+    color: orange;
 }
 
 Input {
     display: block;
+    font-family: 'Alfa Slab One';
+    background-color: rgba(212, 144, 17, 0.51);
+    color: black;
 }
 
 
