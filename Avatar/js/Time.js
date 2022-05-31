@@ -87,7 +87,7 @@ function updateTimer() {
         document.getElementById("Time").innerHTML =
             seconds + ":" + milliseconds;
     }
-}
+};
 
 startHandler();
 stopHandler();

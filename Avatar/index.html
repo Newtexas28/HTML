@@ -15,22 +15,23 @@
     </head>
     <body>
         <h1>Avatar</h1>
-        <h2>Lag din bil</h2>
+        <h2> Make your own car!</h2>
         <div class = "Avatar" id="Input">
-            <label>Skriv inn namn:</label> <br>
-            <input id = "Name" type="text"> <br>
-            <label>Skriv inn størrelse</label> <br>
-            <input id= "Size" type="number"> <br>
-            <label>Skriv inn farga</label> <br>
-            <input id = "Color" type="color"> <br>
-            <label>Skriv inn farten</label> <br>
-            <input id = "Speed" type="number"> <br>
-            <label>Velg Bil merke</label> <br>
-            <select id="Choose_car">
-                <option value="Car">Car</option>
-                <option>SpaceShip</option>
-                <option>Robot</option> 
-            </select> <br>  
+            <label> Choose Carbrand</label> <br>
+            <select id="Choose_car" onchange="output();">
+                <option value="Car">Lambo</option>
+                <option>Ferrari</option>
+            </select> <br>
+            <label>Write inn name of the car:</label> <br>
+            <input id = "Name" type="text" onchange="output();"> <br>
+            <label>Write production year:</label> <br>
+            <input id= "Productions_year" type="number" onchange="output();"> <br>
+            <label>Write the paintcolor on tha car:</label> <br>
+            <input id = "Color" type="text" onchange="output();"> <br>
+            <label>Write in enginetype:</label> <br>
+            <input id = "Engine" type="text" onchange="output();"> <br>
+            <label>Write in fueltype:</label> <br>
+            <input id = "Fuel" type="text" onchange="output();"> <br>  
         </div>
 
         <h2>Racingbane</h2>
@@ -38,8 +39,8 @@
 
         <div id="Race">
             <h3>Car Info!</h3> <br>
-            <button onclick="output();">Bil info</button>
                 <p id="Info"></p> <br>
+            <h2>Simulate</h2>
             <button id="Start" data-playing="false" role="switch" aria-checked="false">
                 <span>Start</span>
             </button>
@@ -58,10 +59,14 @@
                 <div>
                     <img id="Lambo" src="Media/Pictures files/Lamborghini.jpg"> 
                 </div> <br>
+                <div id="Racing_Stripe">
+                    1
+                </div> <br>
                 <div>
                     <img id="Ferrari" src="Media/Pictures files/Ferrari.jfif">    
                 </div>
             </div>
+            <p>https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpaperaccess.com%2Fblack-and-blue-neon-lamborghini&psig=AOvVaw1E4JKfjYXdgMvJuzWRMm84&ust=1654083514533000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOC6scvTifgCFQAAAAAdAAAAABAT</p>
         </div>
     </body>
 </html>
