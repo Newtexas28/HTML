@@ -101,7 +101,7 @@ class Car_Avatar extends Avatar {
     }
 };
 
-
+/*
 class Space_ship_Avatar extends Avatar {
     constructor(name, size, color, speed, engine, fuel) {
         super(name, size, color, speed);
@@ -147,12 +147,53 @@ class Robot_Avatar extends Avatar {
         return this._battery;
     }
 };
-
+*/
 const fuel_calculations = (Max_volume, speed, time_from_start) => 
 {
 
 };
 
+/*
+ * Collecting value from the website.
+ */ 
+
+const output = () => 
+    {
+        const name = document.getElementById('Name').value;
+        const productions_year = document.getElementById('Productions_year').value;
+        const color = document.getElementById('Color').value;
+        const engine = document.getElementById('Engine').value;
+        const choose_car = document.getElementById('Choose_car').value;
+
+        name.toString()
+
+        const information = `
+        Name of the car: ${name} <br>
+        Production year: ${productions_year} <br>
+        Color: ${color} <br>
+        Engine: ${engine} <br>`
+
+        document.getElementById('Info').innerHTML = information;
+};
+
+let Condition = true;
+function Avatarrace() {
+    const input = document.getElementById( 'Input' );
+    const race = document.getElementById( 'Race' );
+            
+    if (Condition === true) {
+        input.style.display = "none";
+        race.style.display = "block";
+        Condition = false;
+    }
+    
+    else if (Condition === false) {
+        input.style.display = "block";
+        race.style.display = "none";
+        Condition = true;
+    }
+};
+    
 /*
  * Declering the variabels Start ant Stop and 
  * Assignig the to the values from the id's from htlm 'start' and 'stop'.
@@ -160,47 +201,6 @@ const fuel_calculations = (Max_volume, speed, time_from_start) =>
 
 const Stop = document.getElementById('Stop');
 const Start = document.getElementById('Start');
-
-
-startHandler();
-stopHandler();
-updateTimer();
-updateLabel();
-
-/*
- * Make Animation for the Cars
- * 
- */ 
-
-gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 0.5});
-
-const Driving = gsap.to('#Lambo', {duration: 1, x: 500, paused: true , yoyo: true, repeat: 30});
-const Drifting = gsap.to('#Lambo', {duration: 1, x: 500, paused: true});
-const Chocing_car = gsap.to('#Lambo', {duration: 1, x: 500, paused: true})
-
-
-const random_driving = () => {
-    const value = Math.floor(Math.random() * Object.keys(jokes).length);
-    return value;
-};
-
-/*
- * Making function to start and stop the animation of the cars driving.
- */
-
-
-function resumeDriving() {
-    console.log('resumeDriving');
-    Driving.play();
-};
-
-function pauseDriving() {
-    console.log('pauseDriving');
-    Driving.pause();
-};
-
-Stop.addEventListener('click', pauseDriving);
-Start.addEventListener('click', resumeDriving);
 
 /*
  * Assign the variabel audioContext to AudioContext()
@@ -214,7 +214,6 @@ const audioContext = new AudioContext();
 const audioElement = document.querySelector( 'audio' );
 const track = audioContext.createMediaElementSource(audioElement);
 track.connect( audioContext.destination );
-
 
 /*
  * Declering playButton and stopButton that collects the values from 'Start' and 'Stop'
@@ -267,44 +266,67 @@ audioElement.addEventListener('ended', () => {
     playButton.dataset.playing = 'false';
 }, false);
 
-let Condition = true;
-function Avatarrace() {
-    const input = document.getElementById( 'Input' );
-    const race = document.getElementById( 'Race' );
-        
-    if (Condition === true) {
-        input.style.display = "none";
-        race.style.display = "block";
-        Condition = false;
-    }
-
-    else if (Condition === false) {
-        input.style.display = "block";
-        race.style.display = "none";
-        Condition = true;
-    }
-};
-
 /*
- * Collecting value from the website
- *
+ * Make Animation for the Cars
+ * The first two animation is for when the cars spwan on the track
  */ 
 
-const output = () => 
-    {
-        const name = document.getElementById('Name').value;
-        const size = document.getElementById('Size').value;
-        const color = document.getElementById('Color').value;
-        const speed = document.getElementById('Speed').value;
-        const choose_car = document.getElementById('Choose_car').value;
+gsap.from("#Ferrari", {duration: 3, opacity: 0, scale: 0.5});
+gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 0.5});
 
-        name.toString()
+/*
+ * These are three diffrent animations is for when the ferrari drives.
+ * The first one goes fast, then the next slower htan the first and so on.
+ * i am using gasp to animate the pictures that coresponde,
+ * with the pictures htat have the id's "Ferrari" and "Lambo".
+ */ 
 
-        const information = `
-        Name: ${name} <br>
-        Size: ${size} <br>
-        Color: ${color} <br>
-        Speed: ${speed} <br>`
+const Driving_Ferrari = gsap.to('#Ferrari', {duration: 50, x: 5100, y:10, z: 200, paused: true });
+const Drifting_Ferrari = gsap.to('#Ferrari', {duration: 80, x: 5100, y: 10, paused: true});
+const Chocing_car_Ferrari = gsap.to('#Ferrari', {duration: 100, x: 5100, y: 10, paused: true})
 
-        document.getElementById('Info').innerHTML = information;
-    };
+const Driving_Lambo = gsap.to('#Lambo', {duration: 50, x: 5100, y:10, z: 200, paused: true});
+const Drifting_Lambo = gsap.to('#Lambo', {duration: 80, x: 5100, y: 10, paused: true});
+const Chocing_car_Lambo = gsap.to('#Lambo', {duration: 100, x: 5100, y: 10, paused: true})
+
+
+/*
+ * Make two array to store the diffrent animations for "Ferrari" and "Lambo"
+ */
+
+const Driving_styels_Ferrari = [Driving_Ferrari, Drifting_Ferrari, Chocing_car_Ferrari];
+const Driving_styels_Lambo = [Driving_Lambo, Drifting_Lambo, Chocing_car_Lambo];
+
+/*
+ * Make two random varibels that store a random driving skill.
+ * Use Math.floor() here to round down to the closest number. 
+ * Use Math.random() to get a pseudorandom number between 0 and 1.
+ * Multiplaying this with the length of the array so we get a random vaule,
+ * that can corespone to the diffrent variabels in the arrays
+ */
+
+const random_driving_Ferrari = Math.floor(Math.random() * Driving_styels_Ferrari.length);
+console.log(random_driving_Ferrari, Driving_styels_Ferrari[random_driving_Ferrari])
+
+const random_driving_Lambo = Math.floor(Math.random() * Driving_styels_Lambo.length);
+console.log(random_driving_Lambo, Driving_styels_Lambo[random_driving_Lambo])
+
+/*
+ * Making function to start and stop the animation of the cars driving.
+ */
+
+function resumeDriving() {
+    console.log('resumeDriving');
+    Driving_styels_Ferrari[random_driving_Ferrari].play();
+    Driving_styels_Lambo[random_driving_Lambo].play();
+
+};
+
+function pauseDriving() {
+    console.log('pauseDriving');
+    Driving_styels_Ferrari[random_driving_Ferrari].pause();
+    Driving_styels_Lambo[random_driving_Lambo].pause();
+};
+
+Stop.addEventListener('click', pauseDriving);
+Start.addEventListener('click', resumeDriving);

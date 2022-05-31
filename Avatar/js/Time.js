@@ -87,8 +87,9 @@ function updateTimer() {
         document.getElementById("Time").innerHTML =
             seconds + ":" + milliseconds;
     }
-}
+};
 
-/*
- * Export the 4 functions startHandler, stopHandler, updateTimer, updateLabel to main.js
- */
+startHandler();
+stopHandler();
+updateTimer();
+updateLabel();
