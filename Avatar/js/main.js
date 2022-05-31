@@ -5,6 +5,20 @@
  */
 
 
+/*
+ * Made a class called AVatar thet collect diffrent values and
+ * returns the values in an object.
+ *  
+ * Than i made a child class that exstends from the avatar class called, 
+ * Car_avatar. Car_avatar thakes tha properies from Avatar and use them and
+ * also make values of its own.
+ * 
+ * This code however is outdated now if i am going to be using classes,
+ * i will change the parant calss up so it has the properise of Car_Avatar.
+ * Then i will make child classes that exstends from the perent class but, 
+ * the childclasses will each be for a individual car, 
+ * that can be modifyide by the user.
+ */ 
 class Avatar {
     constructor (name, size, color, speed, fuel) {
         
@@ -164,8 +178,6 @@ const output = () =>
         const color = document.getElementById('Color').value;
         const engine = document.getElementById('Engine').value;
         const choose_car = document.getElementById('Choose_car').value;
-
-        name.toString()
 
         const information = `
         Carbrand : ${choose_car} <br>

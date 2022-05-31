@@ -18,21 +18,39 @@
         <h1>Avatar</h1>
         <h2> Make your own car!</h2>
         <div class = "Avatar" id="Input">
-            <label> Choose Carbrand</label> <br>
+            <label> Choose a car from ths two carbrands</label> <br>
             <select id="Choose_car" onchange="output();">
-                <option value="Lambo" style="font-family: 'Alfa Slab One'; background-color: rgba(212, 144, 17, 0.812); color: black">Lambo</option>
-                <option value="Ferrari" style="font-family: 'Alfa Slab One'; background-color: rgba(212, 144, 17, 0.812); color: black">Ferrari</option>
+                <option value="The Aventador">The Aventador</option>
+                <option value="The Huracán">The Huracán</option>
+                <option value="Urus">The Urus</option>
+                <option value="LaFerrari Aperta">LaFerrari Aperta</option>
+                <option value="612 Scaglietti">612 Scaglietti</option>
+                <option value="448 Pista Spider">448 Pista Spider</option>
             </select> <br>
-            <label>Write inn name of the car:</label> <br>
+            <label>Write inn your personale name for the car:</label> <br>
             <input id = "Name" type="text" onchange="output();"> <br>
             <label>Write production year:</label> <br>
             <input id= "Productions_year" type="number" onchange="output();"> <br>
-            <label>Write the paintcolor on tha car:</label> <br>
-            <input id = "Color" type="text" onchange="output();"> <br>
-            <label>Write in enginetype:</label> <br>
-            <input id = "Engine" type="text" onchange="output();"> <br>
-            <label>Write in fueltype:</label> <br>
-            <input id = "Fuel" type="text" onchange="output();"> <br>  
+            <label>Choose a paintcolor on the car:</label> <br>
+            <select id = "Color" type="text" onchange="output();">
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+            </select> <br>
+            <label>Choose a engine:</label> <br>
+            <select id = "Engine" type="text" onchange="output();">
+                <option value="V12-powered Aventador">V12-powered Aventador</option>
+                <option value="V10-powered Huracán">V10-powered Huracán</option>
+                <option value="Twin-turbo V8 engine">Twin-turbo V8 engine</option>
+            </select> <br>
+            <label>Choose correct fueltype:</label> <br>
+            <select id = "Fuel" type="text" onchange="output();">
+                <option value="Diesel">Diesel</option>
+                <option value="Gasoline">Gasoline</option>
+                <option value="Electricity">Electricity</option>
+            </select> <br>  
         </div>
 
         <h2>Racingtrack</h2>
@@ -51,7 +69,7 @@
 
             <h3>Elapsed Time:</h3>
             <p id="Time"></p> <br>
-
+            <div id="container"></div>
             <audio>
                 <source src="Media/Audio files/Car acceleration.mp3" type="audio/mpeg">
                 Your browser does not support HTML5 audio.
@@ -60,7 +78,10 @@
                 <div>
                     <img id="Lambo" src="Media/Pictures files/Lamborghini.jpg"> 
                 </div> <br>
-                <div id="Racing_Stripe">
+                <div id="Racing_Stripe_1">
+                    1
+                </div> <br>
+                <div id="Racing_Stripe_2">
                     1
                 </div> <br>
                 <div>
