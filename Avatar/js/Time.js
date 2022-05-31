@@ -89,6 +89,7 @@ function updateTimer() {
     }
 }
 
-/*
- * Export the 4 functions startHandler, stopHandler, updateTimer, updateLabel to main.js
- */
+startHandler();
+stopHandler();
+updateTimer();
+updateLabel();

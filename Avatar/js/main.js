@@ -162,28 +162,23 @@ const Stop = document.getElementById('Stop');
 const Start = document.getElementById('Start');
 
 
-startHandler();
-stopHandler();
-updateTimer();
-updateLabel();
-
 /*
  * Make Animation for the Cars
  * 
  */ 
 
-gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 0.5});
+//gsap.from("#Lambo", {duration: 3, opacity: 0, scale: 1});
 
 const Driving = gsap.to('#Lambo', {duration: 1, x: 500, paused: true , yoyo: true, repeat: 30});
-const Drifting = gsap.to('#Lambo', {duration: 1, x: 500, paused: true});
-const Chocing_car = gsap.to('#Lambo', {duration: 1, x: 500, paused: true})
+//const Drifting = gsap.to('#Lambo', {duration: 1, x: 500, paused: true});
+//const Chocing_car = gsap.to('#Lambo', {duration: 1, x: 500, paused: true})
 
-
+/*
 const random_driving = () => {
     const value = Math.floor(Math.random() * Object.keys(jokes).length);
     return value;
 };
-
+*/
 /*
  * Making function to start and stop the animation of the cars driving.
  */
@@ -214,7 +209,7 @@ const audioContext = new AudioContext();
 const audioElement = document.querySelector( 'audio' );
 const track = audioContext.createMediaElementSource(audioElement);
 track.connect( audioContext.destination );
-
+console.log(audioElement)
 
 /*
  * Declering playButton and stopButton that collects the values from 'Start' and 'Stop'
